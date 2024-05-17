@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: "Roslindale", sans-serif;
+    }
+    table {
+      background-color: #f5f7ffd9;
+      padding: 30px;
+      margin: 50px auto;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 350px;
+      filter: drop-shadow(0 0 0.75rem #ccc);
+    }
+    img {
+        filter: hue-rotate(90deg);
+    }
+    .text {
+      color: #2d2d2d;
+    }
+    .title {
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .head-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .btn-1 {
+      background: linear-gradient(
+        90deg,
+        rgba(38, 99, 223, 1) 35%,
+        rgba(117, 143, 240, 1) 100%
+      );
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 10px 117px;
+      filter: drop-shadow(0 0 0.75rem #9cadf2);
+    }
+    .btn-1:hover {
+      background: linear-gradient(
+        90deg,
+        rgba(117, 143, 240, 1) 35%,
+        rgba(38, 99, 223, 1) 100%
+      );
+      filter: drop-shadow(0 0 0.75rem #4a5585);
+      color: aqua;
+    }
+    .btn-2 {
+      background: #ccc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 10px 67px;
+      filter: drop-shadow(0 0 0.75rem #0e3aeb);
+    }
+    .btn-2:hover {
+      background: linear-gradient(
+        90deg,
+        rgb(162, 163, 165) 35%,
+        rgb(82, 94, 138) 100%
+      );
+      filter: drop-shadow(0 0 0.75rem #ccc);
+      color: aqua;
+    }
+    .input-with-icon {
+      position: relative;
+    }
+    .input-with-icon input[type="email"] {
+      padding-left: 40px; /* Размер изображения плюс небольшой зазор */
+    }
+    .input-with-icon input[type="password"] {
+      padding-left: 40px; /* Размер изображения плюс небольшой зазор */
+    }
+    input {
+      width: 245px;
+      border-radius: 10px;
+      padding: 15px 0;
+      border: none;
+      margin: 5px 0;
+    }
+    .input-with-icon img {
+      position: absolute;
+      left: 10px; /* Расположение изображения относительно левого края */
+      top: 50%; /* Расположение изображения по вертикали по центру */
+      transform: translateY(-50%); /* Центрирование изображения по вертикали */
+      width: 20px; /* Размер изображения */
+      height: auto; /* Автоматическая высота */
+      filter: brightness(1);
+    }
+  </style>
+  <body>
+    <table>
+      <tr>
+        <th>
+          <img
+            style="border-radius: 10px"
+            width="100%; max-width: 200px;"
+            src="../1.jpg"
+            alt="img"
+          />
+        </th>
+      </tr>
+      <tr class="text">
+        <td class="head-title">Forgot Password?</td>
+      </tr>
+      <tr>
+        <td>
+          Don’t worry! It happens. Please enter the email associated with your
+          account.
+          <br />
+          <br />
+        </td>
+      </tr>
+
+      <!-- input section start -->
+
+      <tr>
+        <td>
+          <form>
+            <div class="input-with-icon">
+              <input type="email" placeholder="Email" />
+              <img src="../lesson-2/Icon (1).svg" alt="User Icon" />
+            </div>
+          </form>
+          <br />
+        </td>
+      </tr>
+
+      <!-- input section finished -->
+
+      <!-- btn section start -->
+      <tr>
+        <td>
+          <a href="../lesson-2/hw_figma5.html" class="btn-1">Submit</a>
+          <br />
+          <br />
+          <br />
+        </td>
+      </tr>
+      <!-- btn section finished -->
+    </table>
+  </body>
+</html>
