@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table>
+        <tr class="first-row">
+            <td colspan="3">
+                <img src="../1.jpg" width="100%" height="150">
+            </td>
+        </tr>
+        <tr class="second-row">
+            <td>
+                <img class="img-1" src="../1.jpg" width="100%" height="150">
+            </td>
+            <td>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus hic aut distinctio sapiente dolore cum laborum error similique dolorem beatae enim, pariatur tenetur dolores unde accusantium, omnis temporibus, ratione ipsam.</p>
+            </td>
+            <td>
+                <img class="img-2" src="../1.jpg" width="100%" height="150">
+            </td>
+        </tr>
+        <tr class="third-row">
+            <td colspan="3">
+                <img src="../1.jpg" width="100%" height="150">
+            </td>
+        </tr>
+    </table>
+
+</body>
+<style>
+    * {
+        transition: 0.5s;
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-color: black;
+    }
+    table {
+        border: 2px red solid;
+        background-color: #333;
+        color: cyan;
+    }
+    table:hover {
+        background-color: black;
+    }
+    table:hover .first-row img {
+        border-radius: 0 0 50% 50%;
+        border-top: 10px double yellowgreen;
+    }
+    table:hover .second-row .img-1 {
+        border-radius: 0 50% 50% 0;
+        border-left: 10px double yellowgreen;
+    }
+    table:hover .second-row .img-2 {
+        border-radius: 50% 0 0 50%;
+        border-right: 10px double yellowgreen;
+    }
+    table:hover .third-row img {
+        border-radius: 50% 50% 0 0 ;
+        border-bottom: 10px double yellowgreen;
+    }
+</style>
+</html>
