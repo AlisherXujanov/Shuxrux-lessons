@@ -1,0 +1,240 @@
+/* basic boilerpate */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1680px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+/* basic boilerpate */
+
+/* logo and nav-link started */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 150px;
+}
+.nav-link .items {
+  display: flex;
+  gap: 20px;
+}
+.list-item {
+  list-style: none;
+}
+.list-item a {
+  text-decoration: none;
+  color: #18a0fb;
+  font-size: 15px;
+  font-weight: 400;
+}
+/* logo and nav-link finished */
+
+/* btn section start */
+.header-right button {
+  width: 100px;
+  padding: 0.4rem 0;
+  border-radius: 5px;
+  border: 1px solid #18a0fb;
+  cursor: pointer;
+}
+.header-right .btn-1 {
+  color: #18a0fb;
+}
+
+.header-right .btn-2 {
+  background-color: #18a0fb;
+  color: #fff;
+}
+/* btn section finished */
+
+/* joni section start */
+.join-section {
+  background-color: #ccc;
+}
+.join-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 250px 0;
+}
+.join-box img {
+  width: 70px;
+}
+.join-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.join-title h1 {
+  color: #000;
+  font-size: 46px;
+  font-weight: 400;
+}
+.join-title button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #18a0fb;
+  color: #fff;
+  cursor: pointer;
+}
+/* join section finished */
+
+/* card section start */
+.title-card-section h1 {
+  padding: 2rem 0 0 3rem;
+}
+.card {
+  width: 50%;
+  float: left;
+  padding: 2rem 3rem;
+}
+.card p {
+  padding: 1.5rem 0;
+  font-size: 16px;
+  line-height: 25px;
+}
+.card button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background-color: #fff;
+  color: #18a0fb;
+  border: 1px solid #18a0fb;
+  border-radius: 6px;
+  transition: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.card button:hover {
+  background-color: #18a0fb;
+  border: 1px solid #18a0fb;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+/* card section finished */
+
+/* left right section start */
+.left-right-section .left-right {
+  width: 100%;
+  display: flex;
+  padding: 2rem 3rem;
+}
+.empty-card {
+  background-color: #ccc;
+  height: 400px;
+  width: 50%;
+  float: left;
+}
+.right-title {
+  width: 50%;
+  float: left;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.bcg {
+  background-color: #eee;
+}
+/* left right section finished */
+
+/* company card section start */
+
+.company-card-box h1 {
+  font-size: 42px;
+  margin-top: 5rem;
+  text-align: center;
+}
+.company-card-box p {
+  font-size: 32px;
+  padding: 2rem 10rem;
+  text-align: center;
+}
+.company-card-box .cars-bg {
+  width: 19%;
+  height: 150px;
+  margin: 2rem 3rem;
+  background-color: #ccc;
+}
+/* company card section finished */
+
+/* footer title start */
+    .footer-title {
+        margin: 3rem 0;
+    }
+    .footer-title-box ul li {
+        list-style: none;
+    }
+    .footer-title-box ul {
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+    }
+    .footer-title-box {
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-title-box ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .footer-title-box ul li a:hover {
+        color: #18a0fb;
+    }
+/* footer title finished */
+
+/* circle section start */
+    .the-end {
+        margin: 3rem 0;
+    }
+    .circle-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .top {
+        display: flex;
+    }
+    .top .circle{
+        width: 70px;
+        background-color: #ccc;
+        margin: 0 0.2rem;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .bottom p {
+        font-size: 24px;
+    }
+/* circle section finished */

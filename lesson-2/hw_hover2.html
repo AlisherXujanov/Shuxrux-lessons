@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <table>
+        <tr>
+          <td rowspan="3" class="hover">
+            <p class="para">Home</p>
+            <p class="para">Contact</p>
+            <p class="para">About</p>
+          </td>
+          <td colspan="3" class="img-hover">
+            <img src="../1.jpg" alt="img" />
+          </td>
+          <td class="hover">
+            <h3>hover</h3>
+          </td>
+        </tr>
+      </table>
+    </main>
+  </body>
+  <style>
+    * {
+      transition: 0.5s;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    img {
+      width: 700px;
+      height: 300px;
+    }
+    .hover h3 {
+      color: transparent;
+    }
+    .hover {
+      padding: 0 40px;
+      display: none;
+    }
+    .hover .para {
+      color: #fff;
+      margin: 5px 0;
+      transition: 0.5s;
+    }
+    table {
+      margin: 0 auto;
+      background-color: grey;
+      transition: 0.5s;
+    }
+    table:hover img {
+      width: 400px;
+      transition: 0.5s;
+    }
+    table:hover .hover {
+      display: block;
+      transition: 0.5s;
+    }
+  </style>
+</html>
