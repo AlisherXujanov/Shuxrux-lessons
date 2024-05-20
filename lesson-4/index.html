@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="div-1"></div>
+        <div class="div-2"></div>
+        <div class="div-3"></div>
+        <div class="div-4"></div>
+    </main>
+</body>
+<!-- 
+    UI  =>  User Interface   =>  Интерфейс пользователя
+    UX  =>  User Experience  =>  Опыт пользователя
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+    fr   =>  fraction   =>  часть
+
+    1fr    2fr    3fr   =>  6fr
+    16.66  33.33  49.99 =>  100% 
+    100%  / 6  = 16.66
+
+    px || %  
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+    X  axes ->  work horizontally
+    Y  axes ->  work vertically
+    Z  axes ->  work in depth  
+
+    static      ->  default for browser
+
+        all other position values take z-index into account
+        and use it as 1 by default
+
+    relative    ->  works just like static but allows us to use [ top || left || right || bottom ]
+                    for other items that are around, relative stays on its place
+    absolute    ->  works like relative but looses its width and parent element
+                    but to return its parent back, we can use relative position on its parent element    
+                    for other items, absolute looses its place
+    fixed       ->  works like absolute but looses its parent element
+                    and stays on its place even if we scroll the page
+    sticky      ->  works like relative but looses its parent element
+                    and stays on its place until we scroll the page
+
+            main {
+                width: 50%;
+                margin: 0 auto;
+                background-color: gray;
+                height: 300vh;
+                position: relative;
+            }
+            main div {
+                height: 100px;
+                margin-top: 200px;
+            }
+            main div.div-1 { background-color: red; }
+            main div.div-2 { background-color: blue; 
+                position: sticky;
+                top: 0;
+            }
+            main div.div-3 { background-color: yellow; }
+            main div.div-4 { background-color: orange; 
+                position: sticky;
+                top: 0;
+            }
+    -------------------------------------------------------------
+    -------------------------------------------------------------
+    GRADIENT SYNTAX:
+        background: linear-gradient(direction, color1, color2, ...);
+            DIRECTIONS
+                english-directions   =>>  to left, to right, to top, to bottom
+                combine              =>>  to left top,  to right bottom   ....
+                degree               =>>  45deg == to right bottom,  135deg == to left bottom  ...
+        background: radial-gradient(angle, color1, color2, ...);
+            ANGLES
+                ellipse  =>>  default
+                circle   =>>  circle (ровный круг)
+
+                background: radial-gradient(circle, orange, red, black);
+-->
+</html>
+
+<!-- 
+    IMAGE GALLERY
+    -------------------------------------------------------------
+    main {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+
+    img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    main .grid-item:nth-child(1n) {
+        grid-row: span 2;
+    }
+
+    main .grid-item:nth-child(2n) {
+        grid-row: span 3;
+    }
+
+    main .grid-item:nth-child(3n) {
+        grid-row: span 1;
+    }
+
+    main .grid-item:nth-child(4n) {
+        grid-row: span 2;
+    }
+
+    main .grid-item:nth-child(5n) {
+        grid-row: span 3;
+    }
+ -->

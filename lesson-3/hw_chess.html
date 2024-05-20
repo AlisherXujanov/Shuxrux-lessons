@@ -98,16 +98,11 @@
       box-sizing: border-box;
     }
     table {
-      border: 10px solid;
-      border-top-color: green;
-      border-left-color: green;
-      border-bottom-color: rgb(4, 253, 4);
-      border-right-color: rgb(4, 253, 4);
+      border: 10px inset greenyellow;
     }
     table tr td {
       width: 100px;
       height: 100px;
-      border: 1px solid #000;
     }
     table tr:nth-child(odd) td:nth-child(odd),
     table tr:nth-child(even) td:nth-child(even) {
@@ -117,10 +112,10 @@
 </html>
 
 <!-- 
-  remove  =>  class="bcg"
-  redo everything with only nth-child
-
-
-  REPLACE 5 lines into one in css of selector - <table>
-    from line 100 to 105
+  inset   -  inside
+  outset  -  outside
+  ridge   -  3D effect
+  groove  -  3D effect
+  dashed  -  ---------
+  dotted  -  .........
  -->
