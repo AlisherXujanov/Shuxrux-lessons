@@ -10,82 +10,82 @@
       <table>
         <tr>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
-        </tr>
-        <tr>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
         </tr>
         <tr>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
-        </tr>
-        <tr>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
         </tr>
         <tr>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
-        </tr>
-        <tr>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
         </tr>
         <tr>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
           <td></td>
-          <td class="bcg"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td></td>
         </tr>
       </table>
@@ -109,8 +109,18 @@
       height: 100px;
       border: 1px solid #000;
     }
-    table tr td:not(.bcg) {
+    table tr:nth-child(odd) td:nth-child(odd),
+    table tr:nth-child(even) td:nth-child(even) {
       background-color: #000;
     }
   </style>
 </html>
+
+<!-- 
+  remove  =>  class="bcg"
+  redo everything with only nth-child
+
+
+  REPLACE 5 lines into one in css of selector - <table>
+    from line 100 to 105
+ -->
