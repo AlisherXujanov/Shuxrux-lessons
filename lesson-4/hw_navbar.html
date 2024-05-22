@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <div class="navbar-section">
+            <div class="navbar-logo-items">
+              <div class="logo">
+                <img src="../1.jpg" alt="img" />
+              </div>
+              <div class="list-items">
+                <ul class="items">
+                  <li class="item"><a href="#">Home</a></li>
+                  <li class="item"><a href="#">About</a></li>
+                  <li class="item"><a href="#">Blog</a></li>
+                  <li class="item">
+                    <a href="#"><select name="drop" id="drop">
+                        <option>Portfolio</option>
+                        <option>Service</option>
+                        <option>Work</option>
+                    </select></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="navbar-search">
+              <form>
+                <input type="text" placeholder="Search" />
+                <button>Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+      }
+      .container {
+        width: 100%;
+        margin: 0 auto;
+      }
+      .navbar-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+      }
+      .navbar-logo-items {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+      }
+      .navbar-logo-items img {
+        width: 80px;
+        border-radius: 10px;
+      }
+      .navbar-logo-items .list-items ul {
+        display: flex;
+        gap: 35px;
+      }
+      .navbar-logo-items .list-items ul li a {
+        color: #666;
+        font-size: 20px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      .navbar-logo-items .list-items ul li a:hover {
+        color: aqua;
+        border-bottom: 1px solid aqua;
+      }
+      select {
+        padding: 2px 5px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #666;
+      }
+      option {
+        border-radius: 0;
+      }
+      input {
+        padding: 5px 10px;
+      }
+      button {
+        padding: 7px 20px;
+        border-radius: 3px;
+        background-color: #ccc;
+        color: #666;
+        border: none;
+      }
+      button:hover {
+        color: aqua;
+      }
+    </style>
+  </body>
+</html>
