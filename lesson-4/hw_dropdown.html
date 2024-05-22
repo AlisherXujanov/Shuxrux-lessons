@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown hover effect</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dropdown">
+        <p class="drop_title">Dropdown</p>
+        <div class="dropdown-content">
+          <a href="#">item 1</a>
+          <a href="#">item 2</a>
+          <a href="#">item 3</a>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        margin: 0 auto;
+      }
+      .drop_title {
+        background-color: #000;
+        color: red;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        width: 200px;
+        transition: 0.3s;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        top: 100px;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 20px;
+        text-align: center;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border: 1px solid #000;
+      }
+      .dropdown-content a:hover {
+        background-color: skyblue;
+        color: #7D7D7D;
+        transform: scale(1.1);
+        border-radius: 10px;
+      }
+      .dropdown:hover .dropdown-content {
+        border: 1px solid #000;
+        background-color: yellow;
+        display: block;
+      }
+      .dropdown:hover .drop_title {
+        background-color: red;
+        color: #000;
+      }
+    </style>
+  </body>
+</html>
