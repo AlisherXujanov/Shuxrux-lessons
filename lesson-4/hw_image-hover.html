@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-box">
+        <div class="image-item">
+          <img src="../1.jpg" class="image-1" alt="img" />
+        </div>
+        <div class="image-item">
+          <img src="../1.jpg" class="image-2" alt="img" />
+        </div>
+        <div class="image-item">
+          <img src="../1.jpg" class="image-3" alt="img" />
+        </div>
+        <div class="image-item">
+          <img src="../1.jpg" class="image-4" alt="img" />
+        </div>
+      </div>
+    </div>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.3s;
+      }
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .img-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5px;
+        padding: 5px;
+        background-color: #666;
+      }
+      .img-box .image-item img {
+        width: 100%;
+        filter: grayscale(1);
+      }
+      .img-box .image-item .image-1:hover {
+        border-radius: 50% 0 50%;
+        filter: grayscale(0);
+        border-bottom: 15px solid dotted;
+        transform: scale(0.9);
+      }
+      .img-box .image-item .image-2:hover {
+        border-radius: 0 50% 0;
+        filter: hue-rotate(180deg);
+        border-bottom: 15px solid dotted;
+        transform: scale(0.9);
+      }
+      .img-box .image-item .image-3:hover {
+        border-radius: 50% 0 50%;
+        filter: hue-rotate(90deg);
+        border-bottom: 15px solid dotted;
+        transform: scale(0.9);
+      }
+      .img-box .image-item .image-4:hover {
+        border-radius: 0 50% 0;
+        filter: hue-rotate(45deg);
+        border-bottom: 15px solid dotted;
+        transform: scale(0.9);
+      }
+    </style>
+  </body>
+</html>
