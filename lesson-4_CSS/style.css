@@ -1,3 +1,9 @@
+/* :root {
+  --smallScreen: 576px;
+  --mediumScreen: 768px;
+  --largeScreen: 1175px;
+} */
+
 /* layout basic css start */
 * {
   padding: 0;
@@ -123,7 +129,7 @@ header {
   width: 100%;
   border-radius: 20px;
 }
-/* .img-section {
+.img-section {
   position: relative;
 }
 .img-info {
@@ -132,8 +138,7 @@ header {
   max-width: 250px;
   top: 20%;
   right: 5%;
-} */
-
+}
 /* btn section start */
 .effect {
   position: relative;
@@ -500,13 +505,13 @@ header {
 /* footer article section end */
 
 /* responsive design style start */
-@media only screen and (max-width: 1175px) {
+@media (max-width: 1175px) {
   .article-box .article-content {
     gap: 30px;
     padding-top: 30px;
   }
 }
-@media only screen and (max-width: 576px) {
+@media (max-width: 576px) {
   .fist-section-left-right {
     flex-wrap: wrap;
   }

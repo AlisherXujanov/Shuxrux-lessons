@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <img src="1.jpg" alt="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam atque hic fuga praesentium suscipit officia accusantium ducimus nemo cumque. Vero accusantium nobis eius quasi harum est voluptas cumque voluptatibus eveniet.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio exercitationem distinctio ex quidem tempore! Possimus nulla distinctio tenetur placeat explicabo aut cum molestiae dolorum, deserunt illum! Cumque, temporibus. Dolore, adipisci?</p>
+    </main>
+    
+</body>
+<style>
+    main {
+        width: 50%;
+        margin: 0 auto;
+        background-color: lightgray;
+        padding: 10px;
+        overflow: hidden;
+    }
+    img {
+        height: 100px;
+        float: left;
+        width: 100%;
+        max-width: 100px;
+        margin-right: 10px;
+    }
+    img::after {
+        content: "";
+        display: block;
+        clear: both;    
+    }
+
+</style>
+</html>
