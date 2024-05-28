@@ -1,0 +1,14 @@
+// Js intermidate level example - 1
+
+// ------------------------------------------------------------------------
+// Js intermidate level example - 2
+
+
+// ------------------------------------------------------------------------
+// Js advanced level example - 3
+// let str = "This is test text";
+// let symbol = "$";
+
+// let result = str.replace(/t/g, symbol);
+
+// console.log(result);
