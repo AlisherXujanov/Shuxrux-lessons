@@ -9,8 +9,8 @@
 
 // let str2 = "This is test"  // est   => last 3 characters
 
-// // let lastThree = str2.slice(str2.length -3)
-// // console.log(lastThree);
+// let lastThree = str2.slice(str2.length -3)
+// console.log(lastThree);
 
 // let index = parseInt(str2.length/2)
 // let res = str2.charAt(index)

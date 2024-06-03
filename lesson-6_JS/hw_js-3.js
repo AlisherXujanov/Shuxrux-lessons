@@ -1,4 +1,8 @@
 // Js intermidate level example - 1
+// let fullName = "Vladimir Vladimirovich Putin";
+// let lastName = fullName.slice(fullName.lastIndexOf(" ") + 1);
+// let initials = fullName.slice(0, 1) + ". " + fullName.slice(fullName.indexOf(" ") + 1, fullName.lastIndexOf(" ")).replace(/[^A-Z]/g, "") + ".";
+// console.log(lastName + " " + initials);
 
 // ------------------------------------------------------------------------
 // Js intermidate level example - 2
