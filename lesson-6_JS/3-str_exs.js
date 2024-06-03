@@ -1,6 +1,6 @@
-// Дана строка str. Вам нужно вернуть первую половину 
-// строки, используя slice().   
-// Например: "Cтрока" => "Cтр" 
+// Дана строка str. Вам нужно вернуть первую половину
+// строки, используя slice().
+// Например: "Cтрока" => "Cтр"
 
 // let str = "Cтрока"
 // const MIDDLE = parseInt(str.length / 2)
@@ -9,8 +9,8 @@
 
 // let str2 = "This is test"  // est   => last 3 characters
 
-// // let lastThree = str2.slice(str2.length -3)
-// // console.log(lastThree); 
+// let lastThree = str2.slice(str2.length -3)
+// console.log(lastThree);
 
 // let index = parseInt(str2.length/2)
 // let res = str2.charAt(index)
@@ -18,7 +18,7 @@
 // ===============================
 // ===============================
 // ===============================
-// Дана строка str, замените все вхождения 
+// Дана строка str, замените все вхождения
 // буквы "a" на букву "e", используя replace().
 //       Например: "Атомная станция" => "етомнeя стeнцeя
 
@@ -28,18 +28,18 @@
 // ======================================================
 // ======================================================
 // ======================================================
-// Используйте эти методы, чтобы центрировать слово, 
+// Используйте эти методы, чтобы центрировать слово,
 // если длина слова меньше ожидаемой.
-//       Например: "Hello" => 
-    
-let word = "Hello"
-let expectedLength = 20
-let symbol = "*"
-// "**********Hello**********"
-let len = word.length
-let lackingLength = expectedLength - len  
+//       Например: "Hello" =>
 
-let lackingHalf = parseInt(lackingLength / 2)
-let result = word.padStart(len+lackingHalf, symbol)
-                 .padEnd(20, symbol)
-console.log(result)
+// let word = "Hello";
+// let expectedLength = 20;
+// let symbol = "*";
+// "**********Hello**********"
+// let len = word.length;
+// let lackingLength = expectedLength - len;
+
+// let lackingHalf = parseInt(lackingLength / 2);
+// let result = word.padStart(len + lackingHalf, symbol).padEnd(20, symbol);
+// console.log(result);
+// -------------------------------------------------------------------

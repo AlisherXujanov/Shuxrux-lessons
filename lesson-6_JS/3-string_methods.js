@@ -46,7 +46,7 @@
 // // -----------------------------------------------------------
 // // Search('...' || regExp)    &&    Match('...' || regExp)
 // let str = "O Hello world"
-// console.log(str.search("o"))   // 6
+// console.log(str.search("o"))   // 6    => RegEx does not work search
 // console.log(str.search(/o/i))  // 0    =>  does NOT work with 'g'
 // // --------------------------
 // console.log(str.match("o"))   // [ 'o', index: 6, input: 'O Hello world', groups: undefined ]
@@ -79,7 +79,7 @@
 // -----------------------------------------------------------
 // REPEAT
 // let str = "Hello "
-// console.log(str.repeat(3)) // Hello Hello Hello    
+// console.log(str.repeat(3)) // Hello Hello Hello
 // -----------------------------------------------------------
 // [...].reverse()  &&  [...].join()
 // let str = "Hello world"
@@ -107,20 +107,20 @@
 //!               RU: может принимать специальное регулярное выражение
 //*  toUpperCase()
 //*  toLowerCase()
-//*  concat('...')         => merges two strings 
+//*  concat('...')         => merges two strings
 //!                RU: объединяет две строки
 //*  trim()           => removes whitespace in the beginning
 //*                      and at the end of the string
 //!                RU: удаляет пробелы в начале и в конце строки
 //*  split()          => splits the text into many pieces
 //!                RU: разделяет текст на множество частей
-//*  padStart()       => if the resulting string does NOT reach a 
-//*                      given length we can fill it with a sybmol 
+//*  padStart()       => if the resulting string does NOT reach a
+//*                      given length we can fill it with a sybmol
 //*                      at the start
 //!                RU: если полученная строка НЕ достигает заданной
 //!                   длины, мы можем заполнить ее символом в начале
-//*  padEnd()         => if the resulting string does NOT reach a 
-//*                      given length we can fill it with a sybmol 
+//*  padEnd()         => if the resulting string does NOT reach a
+//*                      given length we can fill it with a sybmol
 //*                      at the end
 //!                RU: если полученная строка НЕ достигает заданной
 //!                     длины, мы можем заполнить ее символом в конце
@@ -134,8 +134,8 @@
 //!                RU: возвращает последний индекс строки
 //*  search()         => returns the first expression that it finds
 //!                RU: возвращает первое выражение, которое он находит
-//*  match()          => returns the matched string (all 
-//*                         strings if we use /.../gi) 
+//*  match()          => returns the matched string (all
+//*                         strings if we use /.../gi)
 //!                RU: возвращает совпавшую строку (все строки, если
 //!                      мы используем /.../gi)
 //*  includes()       => returns true if the string is found
@@ -148,5 +148,3 @@
 //!                RU: повторяет строку определенное количество раз
 //*  join()           => joins all elements of an array into a string
 //!                RU: объединяет все элементы массива в строку
-
-
