@@ -43,3 +43,54 @@
 // let result = word.padStart(len + lackingHalf, symbol).padEnd(20, symbol);
 // console.log(result);
 // -------------------------------------------------------------------
+
+
+
+// ===========================================================
+// ===========================================================
+// ===========================================================
+// ===========================================================
+
+// NEW TASKS
+
+// 1. у вас есть текст. Поменяйте местами первый и последний буквы в строке.
+// обращайте внимание на большие и на маленькие буквы
+// Например:  Cyber  ->  Rybec
+// let text = "Cyber"
+// let firstLetter = text[0]
+// let lastLetter = text[text.length-1]
+// let result = lastLetter.toUpperCase() + text.slice(1, text.length-1) + firstLetter.toLowerCase()
+// console.log(result)
+// ===========================================================
+
+// 2. у вас есть текст. Найдите серединную букву и повторите его 3 раза в оригинальном тексте.
+// Например:  Cyber  ->  Cybbber
+// let my_name = "Cyber"
+// let half = parseInt(my_name.length / 2)  // 2
+// let letter = my_name[half].repeat(3)  // 'bbb'
+// let result = my_name.slice(0, half) + letter + my_name.slice(half + 1)
+// console.log(result)
+// ===========================================================
+
+// 3. у вас есть текст и номер. Повторите пред-последнюю и вторую буквы по номер разу.
+// Например:  
+// 	let str = "Cyber"
+// 	let num = 3
+// 	Результат должен быть: "Cyyybeeer"
+
+// ===========================================================
+
+// 4. у вас есть текст и номер и символ. 
+// Поменяйте пред-последнюю и вторую буквы на этот симвл если те буквы гласные.
+// let str = "Hello world"
+// let vowels = "aioue"
+// let symbol = '$'
+
+// let second = str[1]
+// let former = str[str.length - 2]
+
+// if (vowels.includes(second)) {second = symbol}
+// if (vowels.includes(former)) {former = symbol}
+
+// let result = str[0] + second + str.slice(2, str.length - 2)  + former + str[str.length - 1]
+// console.log("Result: " + result)
