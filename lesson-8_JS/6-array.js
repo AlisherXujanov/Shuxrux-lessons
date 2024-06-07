@@ -4,7 +4,7 @@
 //     - arr[index]  ->  gets the exact element by index
 //     - arr[arr.length-1]  -> last item
 //     - arr[parseInt(arr.length/2)]  ->  middle item
-// 2. slice 
+// 2. slice
 //     - arr.slice(start, end)  ->  gets the elements from start to end
 // ...
 // ----------------------------------------
@@ -13,7 +13,7 @@
 // ----------------------------------------
 // SET || UPDATE  an array
 
-// 1. [].push()     ->  adds el to the end 
+// 1. [].push()     ->  adds el to the end
 // 2. [].pop()      ->  removes el from the end
 // 3. [].shift()    ->  removes el from the start
 // 4. [].unshift()  ->  adds el to the start
@@ -29,14 +29,21 @@
 
 // ---------------
 // A little more difficult
-// 5. [].splice(start, removeCount, el1, el2, el3, ...)  
+// 5. [].splice(start, removeCount, el1, el2, el3, ...)
 //   - start  ->  starting point where we want to add or remove
 //   - removeCount ->  count of the items to remove
 //          -> if 0, no items will be removed
 //          -> if not shown, all items are deleted
 //   - all other items are the items to add
-// let arr = [1, 2, 'a', 'b']
-// let удаленныеЕлементы = arr.splice(2, 1, 10, 11, 12, '...')
-// console.log("Удаленные Елементы: ", удаленныеЕлементы)
-// console.log("Оригинал массив: ", arr)
+// let arr = [1, 2, "a", "b"];
+// let удаленныеЕлементы = arr.splice(2, 1, 10, 11, 12, "...");
+// console.log("Удаленные Елементы: ", удаленныеЕлементы);
+// console.log("Оригинал массив: ", arr);
 
+// let удаленныеЕлементы = arr.splice(2, 1, 10, 11, 12, "...");
+// arr.splice(qaysi elementdan boshlab, nechta element o'chirish, nechta element va qanaqa element qo'shish)
+
+// let arr = ["php", "js", "html", "css", "phyton", "swift", "C#"];
+// let deleteArr = arr.splice(2, 5, "vueJs", "ReactJs");
+// console.log("new Arr:", arr);
+// console.log("remove arr:", deleteArr);
