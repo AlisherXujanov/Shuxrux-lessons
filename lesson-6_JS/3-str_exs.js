@@ -76,12 +76,12 @@
 // 	let num = 3
 // 	Результат должен быть: "Cyyybeeer"
 
-let str = "Cyber";
-let num = 3;
+// let str = "Cyber";
+// let num = 3;
 
-let result = str[0] + str[1].repeat(num) + str.slice(2, -2) + str[str.length -2].repeat(num) + str[str.length -1]
+// let result = str[0] + str[1].repeat(num) + str.slice(2, -2) + str[str.length -2].repeat(num) + str[str.length -1]
 
-console.log(result);
+// console.log(result);
 
 // ===========================================================
 
