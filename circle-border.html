@@ -8,26 +8,44 @@
 </head>
 
 <body>
-    <div class="half-circle"></div>
     <main>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p class="selected">Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <div class="left">
+            <p data-info="first">Lorem ipsum dolor sit amet 1.</p>
+            <p data-info="second">Lorem ipsum dolor sit amet 2.</p>
+            <p class="selected" data-info="third">Lorem ipsum dolor sit amet 3.</p>
+            <p data-info="fourth">Lorem ipsum dolor sit amet 4.</p>
+            <p data-info="fifth">Lorem ipsum dolor sit amet 5.</p>
+            <p>Lorem ipsum dolor sit amet 6.</p>
+            <p>Lorem ipsum dolor sit amet 7.</p>
+        </div>
+        <div class="result"></div>
     </main>
 
 
     <script>
         const p = document.querySelectorAll('p');
+        const resultDiv = document.querySelector('main .result');
+
+        let products = {
+            first: "lorem 1",
+            second: "lorem 2",
+            third: "lorem 3",
+            fourth: "lorem 4",
+            fifth: "lorem 5",
+        }
+
         p.forEach((item) => {
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+                // let item = e.target
+                // item.attribute-name
+                // find the needed element's info
+                // show on the right side by using innerHTML
                 p.forEach((item) => {
                     item.classList.remove('selected');
                 });
                 item.classList.add('selected');
+                let key = item.getAttribute('data-info');
+                resultDiv.innerHTML = products[key];
             });
         });
     </script>
@@ -45,8 +63,17 @@
     main {
         width: 50%;
         margin: 20px auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
         background-color: #eee;
         padding: 50px;
+    }
+    main .result {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 50px;
+        font-size: 2em;
     }
 
     main p {
