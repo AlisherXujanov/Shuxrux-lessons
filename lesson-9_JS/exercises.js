@@ -24,22 +24,22 @@
 // ===========================================================================
 // 3. Write a logic that finds the max number from an array of numbers.
 // RU: Напишите логику, которая находит самое большое число в массиве чисел.
-let numbers = [212, 3, 433, 51, 1, 6, 7, 89, 99, 10]
-let max = 0
-for (let i = 0;   i<numbers.length;    i++) {
-    let num = numbers[i]
-    if (num > max) { max = num  }
-}
-console.log(max) // Expected: 433
+// let numbers = [212, 3, 433, 51, 1, 6, 7, 89, 99, 10]
+// let max = 0
+// for (let i = 0;   i<numbers.length;    i++) {
+//     let num = numbers[i]
+//     if (num > max) { max = num  }
+// }
+// console.log(max) // Expected: 433
 // ===========================================================================
 // 4. Write a logic that finds the min number from an array of numbers.
 // RU: Напишите логику, которая находит самое маленькое число в массиве чисел.
-let min = numbers[0]
-for (let i = 0;   i<numbers.length;   i++) {
-    let num = numbers[i]
-    if (num < min) { min = num }
-}
-console.log(min) 
+// let min = numbers[0]
+// for (let i = 0;   i<numbers.length;   i++) {
+//     let num = numbers[i]
+//     if (num < min) { min = num }
+// }
+// console.log(min) 
 // ===========================================================================
 // 5. Create an array of strings with names.
 // Then create another array with ages.
