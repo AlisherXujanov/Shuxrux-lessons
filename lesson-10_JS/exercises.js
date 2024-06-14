@@ -37,36 +37,35 @@
 //      "3rd choice is Red."
 // ----------------------------------------------------------
 // let colors = [
-//   "Blue",
-//   "Green",
-//   "Red",
-//   "Orange",
-//   "Violet",
-//   "Indigo",
-//   "Yellow",
-//   "Pink",
-//   "Black",
-//   "Aqua",
-//   "Grey",
-//   "Purple",
+//     "Blue",
+//     "Green",
+//     "Red",
+//     "Orange",
+//     "Violet",
+//     "Indigo",
+//     "Yellow",
+//     "Pink",
+//     "Black",
+//     "Aqua",
+//     "Grey",
+//     "Purple",
 // ];
 // let suffixes = ["th", "st", "nd", "rd"];
 
 // for (let i = 0; i < colors.length; i++) {
-//   let suffix;
-//   let number = i + 1;
+//     let suffix;
+//     let number = i + 1;
 
-//   if (number % 10 === 1) {
-//     suffix = "st";
-//   } else if (number % 10 === 2) {
-//     suffix = "nd";
-//   } else if (number % 10 === 3) {
-//     suffix = "rd";
-//   } else {
-//     suffix = "th";
-//   }
-
-//   console.log(`${number}${suffix} choice is ${colors[i]}.`);
+//     if (number % 10 === 1) {
+//         suffix = "st";
+//     } else if (number % 10 === 2) {
+//         suffix = "nd";
+//     } else if (number % 10 === 3) {
+//         suffix = "rd";
+//     } else {
+//         suffix = "th";
+//     }
+//     console.log(`${number}${suffix} choice is ${colors[i]}.`);
 // }
 // ==========================================================
 // ==========================================================
@@ -104,15 +103,16 @@
 // let x = [100, 2, 1, 10]
 // Output  ==>>  ["3", "10", "100"]
 // ----------------------------------------------------------
+// function arrDifference(arr1, arr2) {
+//     let difference1 = arr1.filter(item => !arr2.includes(item))
+//     let difference2 = arr2.filter(item => !arr1.includes(item))
+//     return difference1.concat(difference2);
+// }
+
 // let z = [1, 2, 3];
 // let x = [100, 2, 1, 10];
-// let result = arrDifference(x, z);
-// function arrDifference(arr1, arr2) {
-//   let different1 = arr1.filter((x) => !arr2.includes(x));
-//   let different2 = arr2.filter((z) => !arr1.includes(z));
-//   return different1.concat(different2);
-// }
-// console.log("ex-1", result);
+// let result1 = arrDifference(x, z);
+// console.log("ex-1", result1);
 // ----------------------------------------------------------
 // ex:2 let z2 = [1, 2, 15]
 // let x2 = [11, 3, 4, 1, 2]
@@ -120,12 +120,7 @@
 // ----------------------------------------------------------
 // let z2 = [1, 2, 15];
 // let x2 = [11, 3, 4, 1, 2];
-// let result2 = arrDifference2(z2, x2);
-// function arrDifference2(arr3, arr4) {
-//   let different3 = arr3.filter((x2) => !arr4.includes(x2));
-//   let different4 = arr4.filter((z2) => !arr3.includes(z2));
-//   return different3.concat(different4);
-// }
+// let result2 = arrDifference(z2, x2);
 // console.log("ex-2", result2);
 // ==========================================================
 // ==========================================================
@@ -158,7 +153,16 @@
 // Напишите программу JS, чтобы найти количество четных цифр
 // в заданном целом числе`
 // ----------------------------------------------------------
-// let number = 123456789
-// function even_digits(number) { "..." }
-// even_digits(number) // => 4 (2, 4, 6, 8)
+function even_digits(number) {
+    let arr = []
+    String(number).split("").forEach((val, idx) => {
+        if (parseInt(val) % 2 == 0) {
+            arr.push(parseInt(val))
+        }
+    })
+    return arr
+}
+let n = 123456789
+let result = even_digits(n) // => 4 (2, 4, 6, 8)
+console.log(result)
 
