@@ -55,17 +55,17 @@ arr4.forEach((qiymat, index) => {
 // ====================================================
 // REDUCE (Only one item from all items)
 let arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// let result4 = arr5.reduce((acc, next) => {
-//     // acc == 1, next == 2
-//     // acc == 3, next == 3
-//     // acc == 6, next == 4
-//     // acc == 10, next == 5
-//     // acc == 15, next == 6
-//     // acc == 21, next == 7
-//     // acc == 28, next == 8
-//     // acc == 36, next == 9
-//     return acc + next
-// })
+let result4 = arr5.reduce((acc, next) => {
+    // acc == 1, next == 2
+    // acc == 3, next == 3
+    // acc == 6, next == 4
+    // acc == 10, next == 5
+    // acc == 15, next == 6
+    // acc == 21, next == 7
+    // acc == 28, next == 8
+    // acc == 36, next == 9
+    return acc + next
+})
 // console.log(result4)
 // -----------------------
 // REDUCE with initial-value
@@ -88,5 +88,5 @@ let max_number = arr5.reduce((acc, next) => {
         return next
     }
 })
-console.log(max_number)
+// console.log(max_number)
 // ====================================================
