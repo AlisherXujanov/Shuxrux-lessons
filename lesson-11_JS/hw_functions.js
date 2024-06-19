@@ -141,22 +141,44 @@
 // let r7 = uniqueLetters("This is test text")  // Expected: "hx"
 // console.log("Result 7: ", r7)
 
-// -------------------------------------------------------------------------
-                // ex-1 again with forEache method
-                // function uniqueLetters(str) {
-                //   let result = "";
-                //   str.forEach((current, index) => {
-                //     let before = str.slice(0, index);
-                //     let after = str.slice(index + 1);
-                //     if (!before.includes(current) && !after.includes(current)) {
-                //       result += current;
-                //     }
-                //   });
-                //   return result;
-                // }
+// -----------------------------------------------------------------
+// 1. Напишите функцию для извлечения уникальных символов 
+// или букв (которые только 1 раз указаны) из строки 
+// function uniqueLetters(str) {
+//     let result = ""
+//     for (let i = 0; i < str.length; i++) {
+//         let current = str[i].toLowerCase()
+//         if (current != " ") { // Если текущий символ не пробел
+//             let before = str.slice(0, i).toLowerCase()
+//             let after = str.slice(i + 1).toLowerCase()
+//             if (!before.includes(current) && !after.includes(current)) {
+//                 result += current
+//             }
+//         }
+//     }
+//     // RU: Преобразовать этот цикл в forEach
+//     return result
+// }
+// let r7 = uniqueLetters("This is test text")  // Expected: "hx"
+// console.log("Result 7: ", r7)
 
-                // let r7 = uniqueLetters("This is test text");
-                // console.log("Result 7: ", r7);
+// -------------------------------------------------------------------------
+// ex-1 again with forEache method
+function uniqueLetters(str) {
+    let result = ""
+    str.split("").forEach((current, index) => {
+        let before = str.slice(0, index).toLowerCase()
+        let after = str.slice(index + 1).toLowerCase()
+        let current_lower = current.toLowerCase()
+        if (!before.includes(current_lower) && !after.includes(current_lower)) {
+            result += current
+        }
+    })
+    return result
+}
+
+let r7 = uniqueLetters("This is test text")
+console.log("Result 7: ", r7)
 // -------------------------------------------------------------------------
 // let x = "Andrey"
 // if (x != "Andrey") {
@@ -168,16 +190,32 @@
 // 4. Напишите функцию, которая принимает массив строк. Функция должна вернуть
 // новый массив, в котором каждая строка перевернута.
 
-// let myArr = ["itachi", "naruto", "kisame"];
+let myArr = ["itachi", "naruto", "kisame"]
+function reverseStr(arr) {
+    // let reverseResult = []
+    // for (i = 0; i < arr.length; i++) {
+    //     let reversedStr = arr[i].split("").reverse().join("")
+    //     reverseResult.push(reversedStr)
+    // }
+    // return reverseResult
+    return arr.map(str => str.split("").reverse().join(""))
+}
+let result = reverseStr(myArr)
+console.log(result)
+// ==========================================================================
+// 5. Напишите функцию для генерации строки ID (указанной длины) из случайных символов 
 
-// function reverseStr(arr) {
-//   let reverseResult = [];
-
-//   for (i = 0; i < arr.length; i++) {
-//     let reversedStr = arr[i].split("").reverse().join("");
-//     reverseResult.push(reversedStr);
-//   }
-//   return reverseResult;
-// }
-
-// console.log(reverseResult);
+function passwordGenerator(len) {
+    let numbers = '1234567890'
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    let symbols = '!@#$%^&*'
+    let total = numbers + alphabet + symbols
+    let result = ""
+    for (let i=0;  i<len;  i++) {
+        let randomIndex = parseInt(Math.random() * total.length)
+        result += total[randomIndex]
+    }
+    return result
+}
+let randomPassword = passwordGenerator(15)
+console.log(randomPassword)
