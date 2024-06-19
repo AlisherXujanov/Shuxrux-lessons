@@ -1,4 +1,4 @@
-// DRY  =>  Dont Repeat Yourself
+ // DRY  =>  Dont Repeat Yourself
 // Function MUST do only one thing at a time
 // And do it well
 // -----------------------------
@@ -59,8 +59,5 @@
 // let blender = fruit => `Blending ${fruit} and Berry`
 // let glass1 = blender("Banana")
 // console.log(glass1)
-
-
-
 
 
