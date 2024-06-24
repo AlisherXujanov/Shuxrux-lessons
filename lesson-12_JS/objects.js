@@ -29,17 +29,15 @@
 //     null: null,
 //     undefined: undefined,
 //     object: {},
-    // function: function() { 
-    //     console.log("Number: ", this.number) 
-    //     return "..."
-    // }
+// function: function() {
+//     console.log("Number: ", this.number)
+//     return "..."
+// }
 // }
 
 // console.table(student)
 // console.log(student["name"])
 // console.log(dataTypes.function())
-
-
 
 // ========================================================
 // let numbers_as_object = {first:11, "second":22, "...":"..." }
@@ -71,7 +69,6 @@
 // console.log(table_arr)
 // console.table(table_obj)
 
-
 // ========================================================
 // ----UPDATING--------------------------------------------
 // let table_arr = ['red', 'big', 'for kitchen']
@@ -97,7 +94,6 @@
 // delete table_obj.size
 // console.log("После ",table_obj)
 
-
 // ----ADDITION-------------------------------------
 // let table_arr = ['red', 'big', 'for kitchen']
 // let table_obj = {color:"red", size:"big", location:"for kitchen"}
@@ -107,16 +103,16 @@
 
 // if referring field does NOT exist
 // then it gets added as a new field
-// RU: если поле не существует, 
+// RU: если поле не существует,
 // то оно добавляется как новое поле
 
 // ----MERGING-------------------------------------
 // spread operator  ->  ...
-// ...  =>  spread operator adds only elements from 
-//          the list into the list 
+// ...  =>  spread operator adds only elements from
+//          the list into the list
 //          RU: распыляет элементы массива в массив
 //          ex:
-//              let x=[1,2]; 
+//              let x=[1,2];
 //              let y=[3,4];
 //              let z=[...x, ...z]
 //              console.log(z)  // [1,2,3,4]
@@ -142,8 +138,8 @@
 // let a = {...client, ...client_address}
 // console.table(a)
 // ========================================================
-// ------ REST ------ 
-// If you use SPREAD operator for a parameter of function 
+// ------ REST ------
+// If you use SPREAD operator for a parameter of function
 // that becomes an array that is called a REST operator
 // ex:
 // function fn(a, b, ...rest) {
@@ -158,7 +154,7 @@
 //* TASK TO GET INFO FROM CLIENT AND CREATE A TABLE
 // RU: ЗАДАЧА ПОЛУЧИТЬ ИНФОРМАЦИЮ ОТ КЛИЕНТА И СОЗДАТЬ ТАБЛИЦУ
 
-// let client_name = 'prompt("Enter your name: ")' 
+// let client_name = 'prompt("Enter your name: ")'
 // let client_surname = 'prompt("Enter your surname: ")'
 // let client_age = 'prompt("Enter your age: ")'
 
@@ -185,16 +181,14 @@
 
 // console.log(Object.entries(client).length)
 
-
-
 // Array.isArray([])  => bool
-// Object.keys(client)   // =>  ["name", "surname", "age"]  
+// Object.keys(client)   // =>  ["name", "surname", "age"]
 // Object.values(client)  //  =>  ["Name 1", "Surname 1", 20]
 // Object.entries(client)  // =>  [["name", "Name 1"], ["surname", "Surname 1"], ["age", 20]]
 
-// Object.entries(...)  => gets every entry from 
+// Object.entries(...)  => gets every entry from
 //                         an object and makes a new Array
-//              берёт каждый заход от обекта и создаёт 
+//              берёт каждый заход от обекта и создаёт
 //              маленькие листы от них
 
 // Object.keys(...)    => gets every key from object
@@ -222,7 +216,7 @@
 //    block of code
 // }
 
-// DRY  =>  Don't Repeat Yourself 
+// DRY  =>  Don't Repeat Yourself
 
 // let person = {
 //     name: "Warren",
@@ -237,6 +231,30 @@
 // ------CREATING OBJECTS---------------------------------------------
 // -------------------------------------------------------------------
 // CONSTRUCTOR FUNCTION
+/*  
+    Обичный синтаксис создания объекта {...} позволяет создать только один объект.
+    Но зачастую нам нужно создать множество однотипочных объектов, таких как пользователи,
+    элементы меню и т.д. Это можно сделать при помощи функции - конструктора и оператора
+    "new"
+*/
+
+/*
+    Функции - конструкторы являются обычными функциями. Но есть два правила: 
+    1. Имя функции - конструктор должно начинаться с большой буквы.
+    2. Функция - конструктор должна вызываться при поиощм оператора "new"
+*/
+
+// function UserInfo(name) {
+//   // this = {}; Создается пустой объект (неявно) автоматический создается
+
+//   this.name = name;
+//   this.age = 30;
+
+//   // return this; Возвращается объект (неявно) автоматический создается
+// }
+// console.log(new UserInfo("petya"));
+// console.log(new UserInfo("lolo"));
+
 // function Person(cName, surname, age) {
 //     this.name = cName
 //     this.surname = surname
@@ -247,3 +265,77 @@
 // console.table(p1)
 // console.table(p2)
 
+// -------------------------------------------------------------------
+// ------OBJECTS ASSIGN-----------------------------------------------
+// СИНТАКСИС =>
+// => Object.assign(куда(объект), что(свойство #1), что(свойство #2), ...)
+
+// let userInfo = {
+//   name: "Вася",
+//   age: 30,
+// };
+// let user = Object.assign({}, userInfo);
+// user.age = 20;
+
+// console.log("default user info :", userInfo);
+// console.log("new user info :", user);
+// -------------------------------------------------------------------
+// -----ADD PROPERTY WITH OBJECT ASSIGN-------------------------------
+// let userInfo = {
+//   name: "Вася",
+//   age: 30,
+// };
+// Object.assign(userInfo, { ["likes js"]: true, city: "tashkent" });
+// console.log(userInfo);
+// -------------------------------------------------------------------
+// -----ОПЦИОНАЛЬНАЯ ЦЕПОЧКА-------------------------------
+// let userInfo = {
+//   name: "Вася",
+//   age: 30,
+//   //   address: {
+//   //     city: "tashkent",
+//   //     street: "freedom",
+//   //   },
+// };
+// // console.log(userInfo.address.street);
+// console.log(userInfo?.address?.street);
+// -------------------------------------------------------------------
+// let userInfo = {
+//   name: "vasya",
+//   age: 30,
+//   address: {
+//     street: "freedom",
+//     city: "tashkent",
+//   },
+// };
+
+// for (let e in userInfo) {
+//   console.log("proverty:", e);
+//   console.log("value:", userInfo[e]);
+// }
+// -------------------------------------------------------------------
+// ---------ИСПОЛЬЗОВАНИЕ this----------------------------------------
+// this обращается первому родительскому объекту
+// let userInfo = {
+//   name: "vasya",
+//   age: 30,
+//   address: {
+//     street: "freedom",
+//     city: "tashkent",
+//   },
+//   showInfo() {
+//     // function show() {
+//     //   console.log(
+//     //     `${this.name}, ${this.age} лет. Адрес: г. ${this.address.city}`
+//     //   );
+//     // }
+//     // у стрелочной функции нет своего "this" используетяс
+//     // значение из внешнего метода userInfo.showInfo()
+//     let show = () =>
+//       console.log(
+//         `${this.name}, ${this.age} лет. Адрес: г. ${this.address.city}`
+//       );
+//     show();
+//   },
+// };
+// userInfo.showInfo();
