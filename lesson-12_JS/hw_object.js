@@ -102,9 +102,20 @@
 // }
 // console.log(newKey);
 
-
 // ============================================================================================
 
 // 5.Создайте функцию, которая принимает объект в
 // качестве параметра и возвращает объект, отсортированный
 //  по его значениям (а не ключам)
+
+let userInfo = {
+  name: "вася",
+  age: 30,
+  "like js": true,
+};
+
+let user = Object.assign({}, userInfo);
+
+user.age = 20;
+console.log("default user info :", userInfo);
+console.log("new user info :", user);
