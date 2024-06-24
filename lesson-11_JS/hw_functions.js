@@ -164,21 +164,21 @@
 
 // -------------------------------------------------------------------------
 // ex-1 again with forEache method
-function uniqueLetters(str) {
-    let result = ""
-    str.split("").forEach((current, index) => {
-        let before = str.slice(0, index).toLowerCase()
-        let after = str.slice(index + 1).toLowerCase()
-        let current_lower = current.toLowerCase()
-        if (!before.includes(current_lower) && !after.includes(current_lower)) {
-            result += current
-        }
-    })
-    return result
-}
+// function uniqueLetters(str) {
+//     let result = ""
+//     str.split("").forEach((current, index) => {
+//         let before = str.slice(0, index).toLowerCase()
+//         let after = str.slice(index + 1).toLowerCase()
+//         let current_lower = current.toLowerCase()
+//         if (!before.includes(current_lower) && !after.includes(current_lower)) {
+//             result += current
+//         }
+//     })
+//     return result
+// }
 
-let r7 = uniqueLetters("This is test text")
-console.log("Result 7: ", r7)
+// let r7 = uniqueLetters("This is test text")
+// console.log("Result 7: ", r7)
 // -------------------------------------------------------------------------
 // let x = "Andrey"
 // if (x != "Andrey") {
@@ -190,18 +190,18 @@ console.log("Result 7: ", r7)
 // 4. Напишите функцию, которая принимает массив строк. Функция должна вернуть
 // новый массив, в котором каждая строка перевернута.
 
-let myArr = ["itachi", "naruto", "kisame"]
-function reverseStr(arr) {
+// let myArr = ["itachi", "naruto", "kisame"]
+// function reverseStr(arr) {
     // let reverseResult = []
     // for (i = 0; i < arr.length; i++) {
     //     let reversedStr = arr[i].split("").reverse().join("")
     //     reverseResult.push(reversedStr)
     // }
     // return reverseResult
-    return arr.map(str => str.split("").reverse().join(""))
-}
-let result = reverseStr(myArr)
-console.log(result)
+    // return arr.map(str => str.split("").reverse().join(""))
+// }
+// let result = reverseStr(myArr)
+// console.log(result)
 // ==========================================================================
 // 5. Напишите функцию для генерации строки ID (указанной длины) из случайных символов 
 
