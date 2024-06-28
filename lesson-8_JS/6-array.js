@@ -6,6 +6,8 @@
 //     - arr[parseInt(arr.length/2)]  ->  middle item
 // 2. slice
 //     - arr.slice(start, end)  ->  gets the elements from start to end
+//     - Создается новый массив, в который копирует часть либо весь массив
+//     - Синтаксис arr.slice(start, end) Не включая [end]
 // ...
 // ----------------------------------------
 // Some string related methods can be used with arrays too. BUT NOT ALL!

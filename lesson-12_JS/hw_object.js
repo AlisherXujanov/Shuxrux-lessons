@@ -199,31 +199,32 @@
 // сколько раз каждое значение встречается в объекте. 
 
 
-function countValues(obj) {
-  const RESULT = {}
+// function countValues(obj) {
+//   const RESULT = {}
 
-  let vals = Object.values(obj)
-  vals.forEach(val => {
-    const KEY = String(val)
-    if(Object.keys(RESULT).includes(KEY)) {
-      RESULT[KEY] += 1
-    } else {
-      RESULT[KEY] = 1
-    }
-  })
-  return RESULT
-}
+//   let vals = Object.values(obj)
+//   vals.forEach(val => {
+//     const KEY = String(val)
+//     if(Object.keys(RESULT).includes(KEY)) {
+//       RESULT[KEY] += 1
+//     } else {
+//       RESULT[KEY] = 1
+//     }
+//   })
+//   return RESULT
+// }
 
 
 
-let testObject = {
-  a: 5, b: 10, c: 15,
-  d: 5, e: 10, f: 15,
-  g: 20, h: true, i: 20,
-  j: 20, k: true, l: 35,
-  m:undefined,  n:null,  o:undefined
-}
-// OUTPUT:
-// { "5":2,  "10":2,  "15":2,  ... ...}
-let result4 = countValues(testObject)
-console.table(result4)
+// let testObject = {
+//   a: 5, b: 10, c: 15,
+//   d: 5, e: 10, f: 15,
+//   g: 20, h: true, i: 20,
+//   j: 20, k: true, l: 35,
+//   m:undefined,  n:null,  o:undefined
+// }
+// // OUTPUT:
+// // { "5":2,  "10":2,  "15":2,  ... ...}
+// let result4 = countValues(testObject)
+// console.table(result4)
+
