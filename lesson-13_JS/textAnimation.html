@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Hello</h1>
+
+
+    <script>
+        const h1 = document.querySelector('h1')
+
+        function rotateText() {
+            const text = h1.textContent
+            // "dHello worl"
+            let lastLetter = text[text.length - 1]
+            // let lastLetter = text.charAt(text.length - 1)
+            let newText = lastLetter + text.slice(0, text.length - 1)            
+            h1.textContent = newText
+        }
+
+        const SECOND = 1000
+        setInterval(rotateText, SECOND)
+    </script>
+</body>
+<style>
+    h1 {
+        display: block;
+        width: 180px;
+        margin: 0 auto;
+        background-color: black;
+        text-align: center;
+        color: snow;
+    }
+</style>
+</html>
