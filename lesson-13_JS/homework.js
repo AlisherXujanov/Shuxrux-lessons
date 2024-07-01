@@ -1,7 +1,16 @@
 // ================================================
 // PIRAMID
-function drawPiramid(lines) { }
-drawPiramid(10)
+function drawPiramid(lines) {
+    // for (let i = 1; i < lines; i++) {
+    //     let spaces = ' '.repeat(lines - i);
+    //     let stars = '*'.repeat(2 * i - 1);
+    //     console.log(spaces + stars);
+    // }
+    for (let i = 1; i < lines; i++) {
+        console.log(" ".repeat(lines - i) + "* ".repeat(i))
+    }
+}
+// drawPiramid(10)
 //     *
 //    ***
 //   *****
@@ -11,14 +20,24 @@ drawPiramid(10)
 // FACTORIAL
 // !5  =   5 * 4 * 3 * 2 * 1     =>    120
 // !10 =   10*9*8*7*6*5*4*3*2*1  =>    3628800
-function factorial(num) { }
-
-factorial(5) // 120
-factorial(10) // 3628800
+function factorial(num) {
+    let result = 1
+    for (let i = 1; i <= num; i++) {
+        result = result * i
+        // result *= i
+    }
+    return result
+}
+let r1 = factorial(5)  // 120
+let r2 = factorial(10) // 3628800
+// console.log(r1)
+// console.log(r2)
 // ================================================
 // FIBONACCI  (1)
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ... 
-function fibbo_upto(num) { }
+function fibbo_upto(num) {
+    
+}
 
 fibbo_upto(100) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
 
