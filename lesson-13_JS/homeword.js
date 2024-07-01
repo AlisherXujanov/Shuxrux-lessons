@@ -1,6 +1,12 @@
 // ================================================
 // PIRAMID
-function drawPiramid(lines) { }
+function drawPiramid(lines) {
+    for (let i = 1; i < lines; i++) {
+        let spaces = ' '.repeat(lines - i);
+        let stars = '*'.repeat(2 * i - 1);
+        console.log(spaces + stars);
+    }
+}
 drawPiramid(10)
 //     *
 //    ***
