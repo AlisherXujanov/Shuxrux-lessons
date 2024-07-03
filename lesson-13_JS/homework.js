@@ -1,23 +1,14 @@
 // ================================================
 // PIRAMID
 function drawPiramid(lines) {
-<<<<<<< HEAD:lesson-13_JS/homeword.js
     for (let i = 1; i < lines; i++) {
         let spaces = ' '.repeat(lines - i);
         let stars = '*'.repeat(2 * i - 1);
         console.log(spaces + stars);
-=======
-    // for (let i = 1; i < lines; i++) {
-    //     let spaces = ' '.repeat(lines - i);
-    //     let stars = '*'.repeat(2 * i - 1);
-    //     console.log(spaces + stars);
-    // }
-    for (let i = 1; i < lines; i++) {
-        console.log(" ".repeat(lines - i) + "* ".repeat(i))
->>>>>>> a63f241b6cfbe1532f5a0e4d7512527a3bd5d0ac:lesson-13_JS/homework.js
-    }
+
 }
 // drawPiramid(10)
+}
 //     *
 //    ***
 //   *****
@@ -27,24 +18,17 @@ function drawPiramid(lines) {
 // FACTORIAL
 // !5  =   5 * 4 * 3 * 2 * 1     =>    120
 // !10 =   10*9*8*7*6*5*4*3*2*1  =>    3628800
-<<<<<<< HEAD:lesson-13_JS/homeword.js
 function factorial(num) { 
     // !5  =   5 * 4 * 3 * 2 * 1     =>    120
     // !10 =   10*9*8*7*6*5*4*3*2*1  =>    3628800
     let result = 1;
     for(let i = 1; i <= num; i++){
         result = result * i;
-=======
-function factorial(num) {
-    let result = 1
-    for (let i = 1; i <= num; i++) {
-        result = result * i
->>>>>>> a63f241b6cfbe1532f5a0e4d7512527a3bd5d0ac:lesson-13_JS/homework.js
+
         // result *= i
     }
     return result
 }
-<<<<<<< HEAD:lesson-13_JS/homeword.js
 
 let r1 = factorial(5) // 120
 let r2 =  factorial(10) // 3628800
@@ -54,18 +38,7 @@ console.log(r2);
 // FIBONACCI  (1)
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ... 
 function fibbo_upto(num) {}
-=======
-let r1 = factorial(5)  // 120
-let r2 = factorial(10) // 3628800
-// console.log(r1)
-// console.log(r2)
-// ================================================
-// FIBONACCI  (1)
-// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ... 
-function fibbo_upto(num) {
-    
-}
->>>>>>> a63f241b6cfbe1532f5a0e4d7512527a3bd5d0ac:lesson-13_JS/homework.js
+
 
 fibbo_upto(100) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
 
