@@ -7,7 +7,7 @@ function drawPiramid(lines) {
         console.log(spaces + stars);
     }
 }
-drawPiramid(10)
+// drawPiramid(10)
 //     *
 //    ***
 //   *****
@@ -17,14 +17,25 @@ drawPiramid(10)
 // FACTORIAL
 // !5  =   5 * 4 * 3 * 2 * 1     =>    120
 // !10 =   10*9*8*7*6*5*4*3*2*1  =>    3628800
-function factorial(num) { }
+function factorial(num) { 
+    // !5  =   5 * 4 * 3 * 2 * 1     =>    120
+    // !10 =   10*9*8*7*6*5*4*3*2*1  =>    3628800
+    let result = 1;
+    for(let i = 1; i <= num; i++){
+        result = result * i;
+        // result *= i
+    }
+    return result
+}
 
-factorial(5) // 120
-factorial(10) // 3628800
+let r1 = factorial(5) // 120
+let r2 =  factorial(10) // 3628800
+console.log(r1);
+console.log(r2);
 // ================================================
 // FIBONACCI  (1)
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ... 
-function fibbo_upto(num) { }
+function fibbo_upto(num) {}
 
 fibbo_upto(100) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
 
@@ -34,3 +45,57 @@ function fibbo_n(how_many) { }
 
 fibbo_n(20) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
 // ================================================
+
+
+// ====================== HW ==========================
+let randomPool = {
+    question1: {
+        word: "Banana",
+        explanation: "A fruit that is yellow and long"
+    }, 
+    question2: {
+        word: "Phone",
+        explanation: "A device that is used to make calls and send messages"
+    },
+    question3: {
+        word: "Orange",
+        explanation: "A fruit that is orange and round"
+    },
+    question4: {
+        word: "Table",
+        explanation: "A piece of furniture with a flat top and one or more legs"
+    },
+    question5: {
+        word: "Television",
+        explanation: "A device that receives signals and displays them on a screen"
+    },
+}
+
+let totalLength = Object.keys(randomPool).length
+let randomIndex = Math.floor(Math.random() * totalLength)
+let randomKey = Object.keys(randomPool)[randomIndex]
+
+let text = randomPool[randomKey].word
+let explanation = randomPool[randomKey].explanation
+let lives = 5
+
+
+
+
+
+// 1. Define a word and explain it to the user
+// RU: Определите слово и объясните его пользователю
+// -----------------------------------------------
+// 2. Ask the user a letter for the word
+// RU: Спросите у пользователя букву для слова
+// -----------------------------------------------
+// 3. Check if the answer has only ONE letter
+// RU: Проверьте, содержит ли ответ только ОДНУ букву
+// -----------------------------------------------
+// 4. CHECK the letter
+// RU: ПРОВЕРЬТЕ букву
+//  -- If the letter is in the word, show the word with the letter
+// RU:  -- Если буква есть в слове, покажите слово с буквой
+// ex:   _ A _ A _ A   =>  B A N A N A
+//  -- If the letter is NOT in the word, reduce the number of lives
+// RU:  -- Если буквы НЕТ в слове, уменьшите количество жизней
