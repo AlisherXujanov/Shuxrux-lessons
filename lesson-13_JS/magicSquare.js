@@ -2,7 +2,7 @@ let randomPool = {
     question1: {
         word: "Banana",
         explanation: "A fruit that is yellow and long"
-    }, 
+    },
     question2: {
         word: "Phone",
         explanation: "A device that is used to make calls and send messages"
@@ -29,7 +29,67 @@ let text = randomPool[randomKey].word
 let explanation = randomPool[randomKey].explanation
 let lives = 5
 
+let HIDDEN_TEXT = "_".repeat(text.length)
+let letters_pool = ''
 
+while (lives > 0) {
+    if (!HIDDEN_TEXT.includes("_")) {
+        alert("Congratulations! You guessed the word!")
+        break
+    }
+
+    let letter = prompt(`
+EXPLANATION: ${explanation}
+-----------------------------
+WORD: ${HIDDEN_TEXT}        
+-----------------------------
+You have: ${lives} lives
+-----------------------------
+Guess a letter: `).toLowerCase()
+
+    if (letters_pool.includes(letter)) {
+        alert("Already entered THIS letter")
+        continue
+    } else {
+        letters_pool += letter
+    }
+
+
+    if (letter.length == 1 && isNaN(letter)) {
+        if (text.toLowerCase().includes(letter)) {
+            alert("CORRECT! Continue ...")
+
+            let new_text = ""
+            for (let i = 0; i < text.length; i++) {
+                // "-----"   ->   p
+                // "-pp--"   ->   p
+
+                // "-pp--"   ->   e
+                // "-pp-e"   ->   e
+                if (letter == text[i].toLowerCase()) {
+                    new_text += text[i]
+                } else {
+                    new_text += HIDDEN_TEXT[i]
+                }
+            }
+            HIDDEN_TEXT = new_text
+        } else {
+            alert("WRONG! Try again ...")
+            lives--
+        }
+    }
+    else if (letter == text.toLowerCase()) {
+        alert("Congratulations! You guessed the word!")
+        break
+    }
+    else {
+        alert("Please enter only one letter")
+    }
+}
+
+if (lives == 0) {
+    alert("GAME OVER!!!" + `\n` + `The word was: ${text}`)
+}
 
 
 
