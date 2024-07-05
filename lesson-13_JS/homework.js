@@ -38,34 +38,32 @@
 // FIBONACCI  (1)
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ... 
 // function fibbo_upto(num) {}
-// function fibbo_upto(num) {
-//     let result = [0, 1];
 
-//     for(let i = 2; i <= num; i++) {
-//         let prevNumber1 = result[i - 1];
-//         let prevNumber2 = result[i - 2];
-//         result.push(prevNumber1 + prevNumber2)
-//     }    
-//     return result[num];
-//   }
-  
-//   let fibo = fibbo_upto(10) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
-//   console.log(fibo); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+function fibbo_upto(num) {
+    let result = [0, 1];
+
+    // RE-DO
+    
+    return result;
+}
+
+let fibo = fibbo_upto(100) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+// console.log(fibo); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 
 // ================================================
 // FIBONACCI  (2)
-// function fibbo_n(how_many) {
-    
-//     let result = [0, 1]
-//     for(let i = 2; i < how_many; i++){
-//         result.push(result[i - 1] + result[i - 2]);
-//     }
-//     return result;
-//   }
-  
-  
-//   let fiboNum = fibbo_n(3)
-//   console.log(fiboNum); 
+function fibbo_n(how_many) {
+    let result = [0, 1]
+    for (let i = 2; i < how_many; i++) {
+        result.push(result[i - 1] + result[i - 2])
+    }
+    return result
+}
+
+let fiboNum = fibbo_n(5) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+console.log(fiboNum);
+
+// 1, 3, 5, 7, 11, 13, 17, 23
 // ================================================
 
