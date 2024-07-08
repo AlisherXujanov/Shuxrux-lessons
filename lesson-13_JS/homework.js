@@ -61,9 +61,11 @@ function fibbo_n(how_many) {
     return result
 }
 
-let fiboNum = fibbo_n(5) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+let fiboNum = fibbo_n(10) // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 
 console.log(fiboNum);
 
-// 1, 3, 5, 7, 11, 13, 17, 23
+
+
+// PRIME FIBONACCIs  =>   1, 3, 5, 7, 11, 13, 
 // ================================================
 
