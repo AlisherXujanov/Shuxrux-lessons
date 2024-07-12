@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Show my name</button>
+
+
+    <script>
+        const btn = document.querySelector('button');
+
+        function throttle(func, delay) {
+            let canCall = true;
+            return function () {
+                if (canCall) {
+                    func();
+                    canCall = false;
+                    setTimeout(() => {
+                        canCall = true;
+                    }, delay);
+                } else {
+                    console.log(`Please wait ${delay} seconds`);
+                }
+            }
+        }
+        function showName() {
+            console.log('My name is Shoxa');
+        }
+
+        btn.addEventListener('click', throttle(showName, 2000));
+
+    </script>
+</body>
+
+</html>
