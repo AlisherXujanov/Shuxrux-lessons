@@ -59,6 +59,50 @@ let eagle = new Eagle("Eagle", 100, "Black")
 // - skill   ==  [name, demage]
 
 
+// URL_TO_POST = ""
+// fetch(URL_TO_POST, {
+//     method: "POST",
+//     body: JSON.stringify
+// })
+
+
+// async function deleteProduct(productId) {
+//     const index = props.products.findIndex(product => product.id === productId);
+//     if (index !== -1) {
+      
+//       Swal.fire({
+//         title: "Are you sure?",
+//         text: "You won't be able to revert this!",
+//         icon: "warning",
+//         showCancelButton: true,
+//         confirmButtonColor: "#3085d6",
+//         cancelButtonColor: "#d33",
+//         confirmButtonText: "Yes, delete it!"
+//       }).then(async (result) => {
+//         if (result.isConfirmed) {
+//           this.toggleLoading(true)
+//           // ...
+//           try {
+//               await request.get('/products');
+//           } catch (error) {
+//               console.error(error);
+//           } finally {
+//               this.toggleLoading(false);
+//           }
+//           props.products.splice(index, 1);
+//           emit('deleteProduct', productId);
+//           Swal.fire({
+//             title: "Deleted!",
+//             text: "Product has been deleted.",
+//             icon: "success"
+//           });
+//         }
+//       });
+//     }
+//   }
+
+
+
 class Pokemon {
     constructor(name, type, health, attackPower, skill) {
         this.name = name
