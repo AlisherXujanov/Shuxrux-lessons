@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
+    <h1>Carts</h1>
+    <input id="target-text" type="text">
+    <button id="create-cart">Create</button>
+    <hr>
+    <div class="content"></div>
+
+    <script>
+        const targetText = document.querySelector('#target-text')
+        const createBtn = document.querySelector('#create-cart')
+        const content = document.querySelector('.content')
+        // -----------------------------------------------------
+        // -----------------------------------------------------
+        function createCartFn(e) {
+            let val = targetText.value
+            let cart = `
+                <div class='cart'>
+                    <h1>${val}</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, libero? Quo voluptatibus aperiam laborum, modi a quidem dolorum earum voluptate quis porro fuga? Velit saepe dignissimos ullam dolorem qui laborum!</p>
+                    <br>
+                    <input type='color' onchange='changeColor(event)'>
+                </div>
+            `
+            content.innerHTML += cart
+            // content.innerHTML = content.innerHTML + cart
+            resetInput(e)
+        }
+        function resetInput(e) {
+            targetText.value = ''
+            // ...
+        }
+        function changeColor(e) {
+            let cart = e.target.parentElement
+            cart.style.backgroundColor = e.target.value
+        }
+        // -----------------------------------------------------
+        // -----------------------------------------------------
+        createBtn.addEventListener('click', createCartFn)
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.style.backgroundColor = 'black'
+                document.body.style.color = 'snow'
+            }, 1000)
+        })
+
+    </script>
 </body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        transition: 0.5s;
+    }
+    button, input {
+        padding: 10px 20px;
+        outline: none;
+        border: none;
+        margin: 10px;
+        background-color: lightgray;
+        border-radius: 10px;
+    }
+    input {
+        text-align: left;
+    }
+    input:focus {
+        background-color: green;
+        color: snow;
+    }
+    button {
+        background-color: green;
+        color: snow;
+    }
+    button:hover {
+        background-color: darkgreen;
+        cursor: pointer;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 20px;
+    }
+    .cart {
+        background-color: gray;
+        color: snow;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
 </html>

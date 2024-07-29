@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>👍</h1>
+
+    <script>
+        const main = document.querySelector('main');
+        main.addEventListener('scroll', function(e) {
+            let topEmptyHeight = main.scrollTop;
+            if (topEmptyHeight < 200) {
+                main.style.backgroundColor = '#333';
+                main.style.color = 'snow';
+            } else {
+                main.style.backgroundColor = 'snow';
+                main.style.color = 'black';
+            }
+
+            if (topEmptyHeight > 400) {
+                main.style.backgroundColor = 'blue';
+                main.style.color = 'snow';
+            } 
+            if (topEmptyHeight > 600) {
+                main.style.backgroundColor = 'indigo';
+                main.style.color = 'red';
+            }
+            if (topEmptyHeight > 800) {
+                main.style.backgroundColor = 'red';
+                main.style.color = 'snow';
+            }
+        })
+
+        window.addEventListener('scroll', function() {
+            let availableTopInPixels = document.documentElement.scrollTop;
+            if (availableTopInPixels < 200) {
+                document.body.style.backgroundColor = '#eee';
+            } else {
+                document.body.style.backgroundColor = '#333';
+            }
+
+            if (availableTopInPixels > 400) {
+                document.body.style.backgroundColor = 'blue';
+            } 
+            if (availableTopInPixels > 600) {
+                document.body.style.backgroundColor = 'indigo';
+            }
+            if (availableTopInPixels > 800) {
+                document.body.style.backgroundColor = 'red';
+            }
+            // switch (availableTopInPixels) {
+            //     case 0:
+            //         document.body.style.backgroundColor = '#333';
+            //         break;
+            //     case 200:
+            //         document.body.style.backgroundColor = 'red';
+            //         break;
+            //     case 400:
+            //         document.body.style.backgroundColor = 'blue';
+            //         break;
+            //     case 600:
+            //         document.body.style.backgroundColor = 'indigo';
+            //         break;
+            // }
+        });
+    </script>
+</body>
+<style>
+    * { transition: 0.3s; }
+    body {
+        transition: 0.5s;
+        height: 200vh;
+    }
+
+    main {
+        width: 50%;
+        padding: 20px;
+        height: 50vh;
+        overflow: auto;
+        color: snow;
+        background-color: #333;
+        border: 1px solid orange;
+    }
+</style>
+</html>
