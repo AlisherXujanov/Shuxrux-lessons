@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      background-color: #000;
+      padding: 25px 0;
+    }
+    .plus, .minus {
+        background-color: #000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 900;
+        color: aqua;
+        cursor: pointer;
+        border: 1px solid aqua;
+    }
+    .counter {
+        font-size: 28px;
+        color: #fff;
+        font-weight: 900;
+    }
+    </style>
+  </style>
+  <body>
+    <div class="wrapper">
+        <p class="minus">-</p>
+        <p class="counter">Counter 0</p>
+        <p class="plus">+</p>
+    </div>
+
+    <script>
+        let counter = document.querySelector('.counter')
+        let minus = document.querySelector('.minus')
+        let plus = document.querySelector('.plus')
+
+        let count = 0;
+
+        plus.addEventListener('click', () => {
+            count++;
+            counter.textContent = `Counter ${count}`
+        })
+
+        minus.addEventListener('click', () => {
+            count--;
+            counter.textContent = `Counter ${count}`
+        })
+
+    </script>
+  </body>
+</html>
