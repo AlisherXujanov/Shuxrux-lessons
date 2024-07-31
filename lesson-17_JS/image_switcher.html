@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <main>
+        <div class="left">
+            <img src="../1.jpg" width="100%">
+            <img src="../2.jpg" width="100%">
+            <img src="../3.jpg" width="100%">
+        </div>
+        <div class="right">
+            <img src="../1.jpg" width="100%">
+        </div>
+    </main>
+
+
+    <script>
+        const leftImgs = document.querySelectorAll('.left img');
+        const rightImg = document.querySelector('.right img');
+
+        //  height: 30vh;
+        //  main .left img:not(:hover) {
+        //      height: calc(40vh / 2);
+        //  }
+
+        leftImgs.forEach(img => {
+            img.addEventListener('click', (e) => {
+                rightImg.style.transform = 'scale(1.5)';
+                
+                setTimeout(() => {
+                    rightImg.src = img.src;
+                    rightImg.style.transform = 'scale(1)';
+                }, 500)
+            })
+        })
+
+
+    </script>
+
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+        text-align: center;
+    }
+
+    body {
+        background-color: #333;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        width: 70%;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+
+    main .right {
+        overflow: hidden;
+    }
+
+    main .right img {
+        height: 70vh;
+        gap: 0;
+    }
+
+    main .left img {
+        filter: grayscale(100%);
+        display: block;
+        height: calc(70vh / 3);
+    }
+
+    main .left img:hover {
+        filter: none;
+        cursor: pointer;
+    }
+</style>
+</html>

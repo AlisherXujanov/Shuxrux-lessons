@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hello world</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam est voluptatem sunt iste porro, eaque quia
+        quibusdam obcaecati assumenda consectetur, sequi aspernatur laboriosam architecto explicabo quaerat omnis totam
+        nihil perferendis.</p>
+
+    <span class="toggler">☀️</span>
+
+    <script>
+        const toggler = document.querySelector('.toggler')
+
+        toggler.addEventListener('click', (e) => {
+            document.body.classList.toggle('dark-theme')
+
+            if (document.body.classList.contains('dark-theme')) {
+                toggler.innerText = "🌙"
+            } else {
+                toggler.innerText = "☀️"
+            }
+        })
+    </script>
+</body>
+<style>
+    * {
+        transition: 0.5s;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    .dark-theme {
+        background-color: #333;
+        color: snow;
+    }
+
+    .toggler {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 1.2em;
+        background-color: rgb(0, 0, 0, 0.1);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .toggler:hover {
+        background-color: rgb(0, 0, 0, 0.3);
+    }
+</style>
+</html>
