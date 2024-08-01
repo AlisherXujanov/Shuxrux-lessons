@@ -41,6 +41,7 @@
         height: 20px;
         border-radius: 50%;
         border: 1px solid #000;
+        cursor: -webkit-grab;
       }
       .green-dot {
         background-color: green;
@@ -108,6 +109,7 @@
         let main = document.querySelector('main')
         let h = document.querySelector('.head')
         let p = document.querySelector('p');
+        let img = document.querySelector('img')
 
         switcher.forEach((dot, index) => {
            dot.addEventListener('click', () => {
@@ -118,24 +120,28 @@
                 main.style.backgroundColor = 'orange';
                 h.style.color = 'rgb(4, 253, 4)'
                 p.style.color = 'rgb(4, 253, 4)'
+                img.style.filter = 'grayscale(100%)';
             }else if (index === 1) {
                 header.style.backgroundColor = 'rgb(220, 250, 76)';
                 header.style.color = 'red';
                 main.style.backgroundColor = 'purple';
                 h.style.color = 'rgb(220, 250, 76)'
                 p.style.color = 'rgb(220, 250, 76)'
+                img.style.filter = 'contrast(250%)';
             }else if (index === 2) {
                 header.style.backgroundColor = 'pink';
                 header.style.color = 'yellow';
                 main.style.backgroundColor = 'aqua';
                 h.style.color = 'pink'
                 p.style.color = 'pink'
+                img.style.filter = 'hue-rotate(0.5turn)';
             }else if (index === 3) {
                 header.style.backgroundColor = 'brown';
                 header.style.color = 'grey';
                 main.style.backgroundColor = 'black';
                 h.style.color = 'brown'
                 p.style.color = 'brown'
+                img.style.filter = 'invert(100%)';
             }
            }) 
         })
