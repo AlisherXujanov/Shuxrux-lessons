@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switcher</title>
+  </head>
+  <body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: all 0.3s;
+      }
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+      header {
+        background-color: #ccc;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px 0;
+      }
+      h1 {
+        font-size: 34px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .theme-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .green-dot,
+      .yellow-dot,
+      .aqua-dot,
+      .red-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #000;
+      }
+      .green-dot {
+        background-color: green;
+      }
+      .yellow-dot {
+        background-color: yellow;
+      }
+      .aqua-dot {
+        background-color: aqua;
+      }
+      .red-dot {
+        background-color: red;
+      }
+      main {
+        height: 100vh;
+      }
+      .main-left-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-top: 40px;
+      }
+      p {
+        max-width: 300px;
+      }
+      img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 16px;
+      }
+    </style>
+
+    <header>
+      <h1>😏Theme Switcher</h1>
+      <div class="theme-dots">
+        <div class="switch green-dot"></div>
+        <div class="switch yellow-dot"></div>
+        <div class="switch aqua-dot"></div>
+        <div class="switch red-dot"></div>
+      </div>
+    </header>
+    <main>
+      <div class="main-left-right">
+        <div class="left-img">
+          <img src="./alison-wang-mou0S7ViElQ-unsplash.jpg" alt="" />
+        </div>
+        <div class="right-content">
+          <h1 class="head">A sweet heading</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quam
+            numquam? Magnam, necessitatibus placeat exercitationem vero
+            doloremque modi, dolor quia ullam tenetur adipisci beatae laboriosam
+            voluptas aut esse iste eveniet recusandae quam incidunt molestiae?
+            Itaque ipsum tenetur recusandae perferendis corporis, id quod ab
+            molestias, excepturi dicta ducimus vero dolorum amet?
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+        let switcher = document.querySelectorAll('.switch');
+        let header = document.querySelector('header')
+        let main = document.querySelector('main')
+        let h = document.querySelector('.head')
+        let p = document.querySelector('p');
+
+        switcher.forEach((dot, index) => {
+           dot.addEventListener('click', () => {
+            console.log('clicked');
+            if(index === 0) {
+                header.style.backgroundColor = 'rgb(4, 253, 4)';
+                header.style.color = 'white';
+                main.style.backgroundColor = 'orange';
+                h.style.color = 'rgb(4, 253, 4)'
+                p.style.color = 'rgb(4, 253, 4)'
+            }else if (index === 1) {
+                header.style.backgroundColor = 'rgb(220, 250, 76)';
+                header.style.color = 'red';
+                main.style.backgroundColor = 'purple';
+                h.style.color = 'rgb(220, 250, 76)'
+                p.style.color = 'rgb(220, 250, 76)'
+            }else if (index === 2) {
+                header.style.backgroundColor = 'pink';
+                header.style.color = 'yellow';
+                main.style.backgroundColor = 'aqua';
+                h.style.color = 'pink'
+                p.style.color = 'pink'
+            }else if (index === 3) {
+                header.style.backgroundColor = 'brown';
+                header.style.color = 'grey';
+                main.style.backgroundColor = 'black';
+                h.style.color = 'brown'
+                p.style.color = 'brown'
+            }
+           }) 
+        })
+        
+
+    </script>
+  </body>
+</html>
