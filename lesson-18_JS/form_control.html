@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Resistration form</h1>
+    <form>
+        <div class="form-control">
+            <label for="name">Username</label>
+            <input id="name" type="text" placeholder="Username">
+            <p class="error"></p>
+        </div>
+        <div class="form-control password-wrapper">
+            <label for="pass">Password</label>
+            <span id="show-password-eye">👁️</span>
+            <input id="pass" type="password" placeholder="Password">
+            <p class="error"></p>
+        </div>
+        <div class="form-control">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+
+    <script>
+        const form = document.querySelector('form')
+        const nameInput = form.querySelector('#name')
+        const passInput = form.querySelector('#pass')
+        const submitBtn = form.querySelector('button[type="submit"]')
+        const resetBtn = form.querySelector('button[type="reset"]')
+        const showPasswordEye = form.querySelector('#show-password-eye')
+        // ------------------------------------------
+        // FUNCTIONS || CALLBACKS
+        function submit(e) {
+            e.preventDefault()
+            console.log("submitted")
+        }
+        submitBtn.addEventListener('click', submit)
+        resetBtn.addEventListener("click", (e) => {
+            e.preventDefault()
+            showError(nameInput, false, '', true)
+            showError(passInput, false, '', true)
+        })
+
+
+        function showError(input, show, msg = "", zero = false) {
+            const errorField = input.parentElement.querySelector('.error')
+            const form = input.parentElement.parentElement
+            if (show) {
+                input.style.outline = '3px solid rgb(255,0,0,0.4)'
+                form.style.border = '3px solid rgb(255,0,0,0.4)'
+                errorField.innerText = msg
+            } else {
+                input.style.outline = '3px solid rgb(0, 255, 255, 0.3)'
+                errorField.innerText = ""
+                form.style.border = "none"
+            }
+            if (zero) {
+                input.style.outline = 'none'
+            }
+        }
+        // ------------------------------------------
+        // VALIDATION
+
+        // function handler(e) {
+        //     const VAL = e.target.value
+        //     const NAME_PATTERN = /^[a-zA-Z0-9]{6,12}$/
+        //     if (VAL.length == 0) {
+        //         startCheckingName = false
+        //         return showError(e.target, false, true)
+        //     }
+        //     if (VAL.length >= 6) { startCheckingName = true }
+        //     if (startCheckingName) {
+        //         if (NAME_PATTERN.test(VAL)) {
+        //             return showError(e.target, false)
+        //         } else {
+        //             return showError(e.target, true)
+        //         }
+        //     }
+        // }
+
+        let startCheckingName = false
+        nameInput.addEventListener('input', (e) => {
+            const VAL = e.target.value
+            const NAME_PATTERN = /^[a-zA-Z0-9]{6,12}$/
+
+            if (VAL.length == 0) {
+                startCheckingName = false
+                return showError(e.target, false, true)
+            }
+            if (VAL.length >= 6) { startCheckingName = true }
+
+            if (startCheckingName) {
+                if (NAME_PATTERN.test(VAL)) {
+                    return showError(e.target, false)
+                } else {
+                    let msg = "Only one word without symbols. Length 6-12"
+                    return showError(e.target, true, msg)
+                }
+            }
+        })
+
+        let startCheckingPass = false
+        passInput.addEventListener('input', (e) => {
+            const VAL = e.target.value
+            const PASS_PATTERN = /^[a-zA-Z0-9]{8,}$/
+
+            if (VAL.length == 0) {
+                startCheckingPass = false
+                return showError(e.target, false, true)
+            }
+            if (VAL.length >= 8) { startCheckingPass = true }
+
+            if (startCheckingPass) {
+                if (PASS_PATTERN.test(VAL)) {
+                    return showError(e.target, false)
+                } else {
+                    let msg = "Only one word without symbols. Length 8<"
+                    return showError(e.target, true, msg)
+                }
+            }
+        })
+
+
+        showPasswordEye.addEventListener('click', (e) => {
+            if (passInput.type == 'password') {
+                passInput.type = 'text'
+                showPasswordEye.innerText = '👀'
+            } else {
+                passInput.type = 'password'
+                showPasswordEye.innerText = '👁️'
+            }
+        })
+    </script>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.3s ease;
+    }
+
+    form {
+        width: 50%;
+        margin: 25px auto;
+        border-radius: 10px;
+        background-color: lightcyan;
+        padding: 20px;
+    }
+
+    form .form-control {
+        margin: 10px 0;
+    }
+
+    form .form-control * {
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+        font-family: sans-serif;
+    }
+
+    input,
+    button {
+        outline: none;
+        border: none;
+        padding: 10px 20px;
+        background-color: lightgray;
+        border-radius: 10px;
+    }
+
+    input:focus {
+        background-color: snow;
+        outline: 3px solid rgb(0, 255, 255, 0.3);
+    }
+
+    input::placeholder {
+        color: gray;
+    }
+
+    button[type='submit'] {
+        background: linear-gradient(45deg, rgba(75, 222, 178, 0.2), rgba(75, 222, 178), rgba(75, 222, 178, 0.2));
+    }
+
+    button[type='reset'] {
+        background: linear-gradient(45deg, rgba(222, 75, 75, 0.2), rgba(222, 75, 75), rgba(222, 75, 75, 0.2));
+    }
+
+    button[type='submit']:hover {
+        background: linear-gradient(45deg, rgba(75, 222, 178), rgba(75, 222, 178), rgba(75, 222, 178));
+    }
+
+    button[type='reset']:hover {
+        background: linear-gradient(45deg, rgba(222, 75, 75), rgba(222, 75, 75), rgba(222, 75, 75));
+    }
+
+    button {
+        color: snow;
+        cursor: pointer;
+    }
+
+    .error {
+        font-size: small;
+        text-align: center;
+        color: red;
+        font-style: italic;
+    }
+
+    .password-wrapper {
+        position: relative;
+    }
+    .password-wrapper span {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .password-wrapper span:hover {
+        background-color: rgb(0,0,0, 0.3);
+    }
+    ::selection {
+        background-color: transparent;
+    }
+    h1::selection,
+    label::selection,
+    p::selection {
+        background-color: black;
+        color: red;
+    }
+</style>
+
+</html>

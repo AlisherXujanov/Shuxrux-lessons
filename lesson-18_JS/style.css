@@ -1,0 +1,64 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: 0.3s ease;
+    }
+
+    form {
+        width: 50%;
+        margin: 25px auto;
+        border-radius: 10px;
+        background-color: lightcyan;
+        padding: 20px;
+    }
+
+    form .form-control {
+        margin: 10px 0;
+    }
+
+    form .form-control * {
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+        font-family: sans-serif;
+    }
+
+    input,
+    button {
+        outline: none;
+        border: none;
+        padding: 10px 20px;
+        background-color: lightgray;
+        border-radius: 10px;
+    }
+
+    input:focus {
+        background-color: snow;
+        outline: 3px solid rgb(0, 255, 255, 0.3);
+    }
+
+    input::placeholder {
+        color: gray;
+    }
+
+    button[type='submit'] {
+        background: linear-gradient(45deg, rgba(75, 222, 178, 0.2), rgba(75, 222, 178), rgba(75, 222, 178, 0.2));
+    }
+
+    button[type='reset'] {
+        background: linear-gradient(45deg, rgba(222, 75, 75, 0.2), rgba(222, 75, 75), rgba(222, 75, 75, 0.2));
+    }
+
+    button[type='submit']:hover {
+        background: linear-gradient(45deg, rgba(75, 222, 178), rgba(75, 222, 178), rgba(75, 222, 178));
+    }
+
+    button[type='reset']:hover {
+        background: linear-gradient(45deg, rgba(222, 75, 75), rgba(222, 75, 75), rgba(222, 75, 75));
+    }
+
+    button {
+        color: snow;
+        cursor: pointer;
+    }
