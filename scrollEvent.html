@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <main>
-        <h1>👍</h1>
+      <h1>👍</h1>
     </main>
 
     <script>
-        const main = document.querySelector('main')
-        const h1 = document.querySelector('h1')
+      const main = document.querySelector("main");
+      const h1 = document.querySelector("h1");
 
-        console.log(window)
+      console.log(window);
 
-        window.addEventListener('scroll', function () {
-            let availableTopInPixels = window.scrollY;
-            if (availableTopInPixels < 200) {
-                document.body.style.backgroundColor = '#eee';
-                h1.innerText = '👍';
-            } else {
-                document.body.style.backgroundColor = '#333';
-                h1.innerText = '🔥';
-            }
-            if (availableTopInPixels > 400) {
-                document.body.style.backgroundColor = 'blue';
-                h1.innerText = '🌐';
-            }
-            if (availableTopInPixels > 600) {
-                document.body.style.backgroundColor = 'indigo';
-                h1.innerText = '💥';
-            }
-            if (availableTopInPixels > 800) {
-                document.body.style.backgroundColor = 'red';
-                h1.innerText = '🛒';
-            }
-        });
+      window.addEventListener("scroll", function () {
+        let availableTopInPixels = window.scrollY;
+        if (availableTopInPixels < 200) {
+          document.body.style.backgroundColor = "#eee";
+          h1.innerText = "👍";
+        } else if (availableTopInPixels < 400) {
+          document.body.style.backgroundColor = "#333";
+          h1.innerText = "🔥";
+        } else if (availableTopInPixels < 600) {
+          document.body.style.backgroundColor = "blue";
+          h1.innerText = "🌐";
+        } else if (availableTopInPixels < 800) {
+          document.body.style.backgroundColor = "indigo";
+          h1.innerText = "💥";
+        } else {
+          document.body.style.backgroundColor = "red";
+          h1.innerText = "🛒";
+        }
+
+        h1.classList.add("animate");
+        setTimeout(() => {
+          h1.classList.remove("animate");
+        }, 500);
+      });
     </script>
-</body>
-<style>
+  </body>
+  <style>
     * {
-        transition: 0.3s;
+      transition: 0.3s;
     }
 
     body {
-        height: 300vh;
+      height: 300vh;
     }
 
     main {
-        width: 50%;
-        margin: 0 auto;
-        background-color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 25%;
+      width: 50%;
+      margin: 0 auto;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 25%;
     }
-</style>
-
+    h1 {
+      transition: transform 0.5s ease-in-out;
+    }
+    .animate {
+      transform: rotate(360deg);
+    }
+  </style>
 </html>
