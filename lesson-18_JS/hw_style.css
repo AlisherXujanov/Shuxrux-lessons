@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3 ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  width: 20px;
+}
+
+body {
+  background-image: url("./sandro-katalina-k1bO_VTiZSs-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+form {
+  width: 100%;
+  max-width: 350px;
+  background-color: #474747;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+form .form-control {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+form .form-control * {
+  margin: 5px 0;
+  display: block;
+}
+
+form .form-control label {
+  font-size: 20px;
+  color: #ccc;
+  font-weight: 700;
+}
+
+form .form-control input {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+form .form-control input:focus {
+  background-color: #f0f8ff;
+  outline: 2px solid rgb(96, 212, 244);
+}
+
+form .form-control input::placeholder {
+  color: #5c5470;
+  font-weight: 600;
+  font-size: 15px;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  /* padding: 10px 30px; */
+  font-size: 12px;
+  background: transparent;
+  border: 2px solid var(--clr);
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--clr);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: 1s;
+  overflow: hidden;
+}
+.btn:hover {
+  background: var(--clr);
+  box-shadow: 0 0 25px var(--clr), 0 0 100px var(--clr), 0 0 150px var(--clr);
+}
+
+button {
+  padding: 0.2rem 0;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.5s;
+  text-shadow: 0 35px #fff;
+  transform: translateY(0px);
+}
+.btn:hover span.hover {
+  transform: translateY(-35px);
+}
