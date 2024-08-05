@@ -3,10 +3,15 @@ buttons.forEach(button => {
     let text = button.textContent;
     button.innerHTML = '';
 
-    for(let char of text){
-        let span = document.createElement('span');
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        button.appendChild(span);
+    for(let letter of text){
+        // '\u00A0'   ===>>>   is special character for space
+
+        // let span = document.createElement('span');
+        // span.textContent = letter === ' ' ? '\u00A0' : letter;
+        // button.appendChild(span);
+
+        let span = `<span>${letter === ' ' ? '\u00A0' : letter}</span>`
+        button.innerHTML += span;
     }
     let spans = button.querySelectorAll('span');
 
