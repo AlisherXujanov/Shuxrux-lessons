@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Control</title>
+    <link rel="stylesheet" href="./hw_style.css">
+</head>
+<body>
+    <form class="form-box">
+        <div class="form-control">
+            <label for="name">Username</label>
+                <input id="name" type="text" placeholder="Username">
+                <p class="error"></p>
+        </div>
+        <div class="form-control">
+            <label for="pass">Password</label>
+            <div class="password-wrapper">
+                <!-- <img src="./eye-show-svgrepo-com.svg" alt="password"> -->
+                <input id="pass" type="password" placeholder="Password">
+                <p class="error"></p>
+            </div>
+        </div>
+        <div class="form-control">
+            <button class="btn" style="--clr: #007bff;" type="submit">Submit</button>
+            <button class="btn" style="--clr: #b731e5;" type="reset">Reset</button>
+        </div>
+    </form>
+
+    <script src="./hw_main.js"></script>
+</body>
+</html>
