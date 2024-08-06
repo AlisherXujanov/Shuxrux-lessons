@@ -16,6 +16,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
@@ -23,7 +27,6 @@ form {
   max-width: 350px;
   background-color: #474747;
   margin: 0 auto;
-  margin-top: 200px;
   padding: 25px;
   border-radius: 16px;
 }
