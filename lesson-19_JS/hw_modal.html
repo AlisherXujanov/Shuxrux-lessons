@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal</title>
+    <link rel="stylesheet" href="./hw_modal.css" />
+  </head>
+  <body>
+    <button id="open-modal">Open Modal</button>
+
+    <div class="modal">
+      <div class="modal-content">
+        <div id="close-modal">&times;</div>
+
+        <div class="form-box">
+          <form>
+            <div class="form-control">
+              <label for="fname">Fist Name</label>
+              <input type="text" id="fname" placeholder="First Name" />
+            </div>
+            <div class="form-control">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Last Name" />
+            </div>
+            <div class="form-control">
+              <button id="enterBtn" type="submit">Enter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //modal section start
+      // variables
+      const closeModal = document.querySelector("#close-modal");
+      const openModal = document.querySelector("#open-modal");
+      const modal = document.querySelector(".modal");
+      const modalContent = document.querySelector(".modal-content");
+      const form = document.querySelector("form");
+      const enterBtn = document.querySelector("#enterBtn");
+
+      //show modal
+      function showModalfn(e) {
+        modal.style.display = "flex";
+        setTimeout(() => {
+          modalContent.style.transform = "scale(1)";
+          modal.style.opacity = "1";
+        }, 200);
+      }
+
+      //close modal
+      function closeModalfn(e) {
+        modal.style.opacity = "0";
+        modalContent.style.transform = "scale(0)";
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 500);
+      }
+
+      //open sweetAlert2   
+      enterBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        Swal.fire({
+          title: "Sweet!",
+          text: "Modal with a custom image.",
+          imageUrl: "https://unsplash.it/400/200",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+        });
+      });
+
+      //window click fn
+      window.addEventListener("click", (e) => {
+        if (e.target == modal) {
+          closeModalfn(e);
+        }
+      });
+
+      openModal.addEventListener("click", showModalfn);
+      closeModal.addEventListener("click", closeModalfn);
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
