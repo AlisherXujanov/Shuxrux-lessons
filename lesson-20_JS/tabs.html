@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="tabs">
+        <div class="header">
+            <button class="tab-link active" data-tab-btn="1">Active</button>
+            <button class="tab-link" data-tab-btn="2">Link</button>
+            <button class="tab-link" data-tab-btn="3">Link</button>
+            <button class="tab-link disabled" data-tab-btn="4">Disabled</button>
+        </div>
+        <div class="tabs-body">
+            <div class="tab-1 active" data-tab="1">lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 lorem-1 </div>
+            <div class="tab-2" data-tab="2">lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 lorem-2 </div>
+            <div class="tab-3" data-tab="3">lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 lorem-3 </div>
+            <div class="tab-4" data-tab="4">lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 lorem-4 </div>
+        </div>
+    </div>
+
+    <script>
+        const tabLinks = document.querySelectorAll('.tabs .tab-link:not(.disabled)')
+        const allTabs = document.querySelectorAll('.tabs .tabs-body > div')
+
+        tabLinks.forEach(tabLink => {
+            tabLink.addEventListener('click', (e) => {
+                tabLinks.forEach(tabLink => {
+                    tabLink.classList.remove('active')
+                })
+                e.target.classList.add('active')
+
+                const tabNum = e.target.getAttribute('data-tab-btn')
+                allTabs.forEach(tab => {
+                    tab.classList.remove('active')
+                })
+                const targetTab = document.querySelector(`.tabs .tabs-body > div[data-tab="${tabNum}"]`)
+                targetTab.classList.add('active')
+            })
+        })
+    </script>
+
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+    .tabs {
+        width: 50%;
+        margin: 100px auto;
+        background-color: #eee;
+        padding: 20px;
+    }
+    .tabs .header {
+        border-bottom: 1px solid gray;
+    }
+    .tabs .header .tab-link {
+        padding: 15px;
+        margin-right: 20px;
+        border: none;
+        cursor: pointer;
+        color: blue;
+    }
+    .tabs .header .active {
+        border-bottom: 2px solid #fff;
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        color: black;
+        position: relative;
+        background-color: #fff;
+        top: 1px;
+    }
+    .tabs .header .disabled {
+        color: gray;
+    }
+    .tabs .tabs-body > div {
+        padding: 20px;
+        background-color: #fff;
+        display: none;
+    }
+    .tabs .tabs-body > div.active {
+        display: block;
+    }
+</style>
+</html>
