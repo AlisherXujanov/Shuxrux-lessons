@@ -25,6 +25,9 @@ a {
 .ap-tab-item {
   list-style: none;
   background-color: #000;
+  color: snow;
+  text-align: center;
+  cursor: pointer;
   padding: 5px 20px;
   border-radius: 5px;
 }
