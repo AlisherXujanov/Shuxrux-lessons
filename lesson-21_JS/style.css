@@ -2,9 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 0.2s;
+    transition: 0.3s;
 }
-
 body {
     height: 200vh;
 }
@@ -21,7 +20,28 @@ body {
     background-color: darkgray;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 50px;
+    background-color: transparent;
+    box-shadow: 0 8px 16px darkgray;
+    position: sticky;
+    top: 0;
+}
 
+nav .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .right .burger-icon,
+nav .right #burger-toggler {
+    display: none;
+}
 
 nav a {
     text-decoration: none;
@@ -31,8 +51,6 @@ nav a {
     font-family: sans-serif;
     font-weight: bold;
 }
-
-
 
 nav img {
     border-radius: 50%;
