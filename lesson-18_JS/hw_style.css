@@ -6,10 +6,6 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-img {
-  width: 20px;
-}
-
 body {
   background-image: url("./sandro-katalina-k1bO_VTiZSs-unsplash.jpg");
   background-position: center;
@@ -20,6 +16,39 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
+  margin: 0;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper img {
+  position: absolute;
+  width: 25px;
+  right: 3px;
+  padding: 1px;
+  bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 0px 45px 5px rgba(255, 0, 0, 0.9);
+}
+.password-wrapper img:hover {
+  box-shadow: 0px 0px 45px 5px rgba(255, 0, 217, 0.9);
+  transform: scale(1.1);
+}
+
+.password-wrapper .off-eye {
+  display: none;
 }
 
 form {
