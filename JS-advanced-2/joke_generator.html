@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="spinner.css">
+</head>
+
+<body>
+    <h1>Joke Generator API</h1>
+    <p>Official Joke Generator</p>
+
+    <main>
+        <div id="joke">
+            <p class="setup"></p>
+            <p class="punchline"></p>
+        </div>
+        <div id="spinner-wrapper">
+            <div class="semipolar-spinner">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+        </div>
+        <button onclick="getJoke()">Get new joke</button>
+    </main>
+
+    <script>
+        const spinnerContainer = document.getElementById("spinner-wrapper")
+        const jokeContainer = document.getElementById("joke")
+        const setupCont = jokeContainer.querySelector(".setup")
+        const punchlineCont = jokeContainer.querySelector(".punchline")
+
+        const URL = "http://www.official-joke-api.appspot.com/random_joke"
+
+        async function getJoke() {
+            // show the spinner when the button is clicked and execute the function 
+            spinnerContainer.style.display = "flex" 
+            // ------------------------------------------------------------------
+            try {
+                let res = await fetch(URL)  // wait until the promise is resolved
+                let data = await res.json() // wait until the data gets out of JSON format
+    
+                console.log(data) // see what is coming from the API
+                setupCont.textContent = data.setup
+                punchlineCont.textContent = data.punchline
+            } catch (error) {
+                console.log(error)
+            }
+            // ------------------------------------------------------------------
+            // hide the spinner after you have finished executing the function
+            setTimeout(() => {
+                spinnerContainer.style.display = "none"
+            }, 500)
+        }
+    </script>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    body {
+        background-color: black;
+        color: snow;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        height: 100vh;
+    }
+
+    main {
+        width: 50%;
+        margin: 10px auto;
+        padding: 20px;
+        text-align: center;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+    }
+    main .setup {
+        font-size: 1.2em;
+        text-align: left;
+    }
+    main .punchline {
+        text-align: right;
+        font-style: italic;
+        color: green;
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+
+    button {
+        background-color: green;
+        color: snow;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+    button:hover {
+        background-color: darkgreen;
+    }
+
+
+    #spinner-wrapper {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0,0,0, 0.5);
+        backdrop-filter: blur(5px);
+    }
+</style>
+
+</html>
