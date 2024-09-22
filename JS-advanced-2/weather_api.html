@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>wheather</title>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="spinners.css" />
   </head>
   <body>
     <h1>To Do list</h1>
@@ -30,7 +31,10 @@
         const URL = `https://jsonplaceholder.typicode.com/todos/${currentId}`;
         const TODO = document.querySelector("#to-do");
         const ORDERED_LIST = document.querySelector("ol");
+        const loading = document.getElementById("spinner-wrapper");
+
         try {
+          loading.style.display = "flex";
           const res = await fetch(URL);
           const data = await res.json();
           console.log("data", data);
@@ -43,6 +47,7 @@
         } catch (error) {
           console.log("Error", error);
         }
+        loading.style.display = "none";
       }
     </script>
 
@@ -89,6 +94,18 @@
         width: 150px;
         color: #fff;
         border-color: transparent;
+      }
+      #spinner-wrapper {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+        position: fixed;
+        top: 0;
+        left: 0;
       }
     </style>
   </body>
