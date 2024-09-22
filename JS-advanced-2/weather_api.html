@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wheather</title>
+  </head>
+  <body>
+    <h1>To Do list</h1>
+
+    <main>
+      <div id="to-do">
+        <ol></ol>
+      </div>
+      <div id="spinner-wrapper">
+        <div class="scaling-squares-spinner">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+      </div>
+      <button onclick="toDoList()">Get To Do List</button>
+    </main>
+
+    <script>
+      let currentId = 1;
+
+      async function toDoList() {
+        const URL = `https://jsonplaceholder.typicode.com/todos/${currentId}`;
+        const TODO = document.querySelector("#to-do");
+        const ORDERED_LIST = document.querySelector("ol");
+        try {
+          const res = await fetch(URL);
+          const data = await res.json();
+          console.log("data", data);
+
+          const newTitle = document.createElement("li");
+          newTitle.classList.add("title");
+          newTitle.textContent = data.title;
+          document.querySelector("ol").appendChild(newTitle);
+          currentId++;
+        } catch (error) {
+          console.log("Error", error);
+        }
+      }
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #7d7d7d;
+      }
+      h1 {
+        color: #fff;
+      }
+      main {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        gap: 5px;
+        border-radius: 16px;
+        padding: 20px;
+        width: 100%;
+      }
+      button {
+        background-color: #303030;
+        border-radius: 8px;
+        padding: 8px 10px;
+        width: 150px;
+      }
+    </style>
+  </body>
+</html>
