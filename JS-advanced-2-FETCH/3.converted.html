@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <input type="number">
+        <button onclick="convert()">Convert to USD</button>
+        <main>
+        </main>
+    </section>
+
+
+    <script>
+        const main = document.querySelector('main')
+        const input = document.querySelector('input')
+
+        const API_KEY = "6933ceb4ed44039fd34f0090"
+        const URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/USD`
+
+
+        async function convert() {
+            const title = `$${input.value} in UZS`
+            let subtitle = "Loading ..."
+            let response = await fetch(URL)
+            let data = await response.json()
+            console.log(data.conversion_rates)
+            let total = data.conversion_rates.UZS * parseInt(input.value)
+            main.innerHTML = `
+                    <h1>${title}</h1>
+                    <h3>${subtitle}</h3>
+                `
+
+            setTimeout(() => {
+                subtitle = `${input.value} dollars in UZS is ${parseInt(total)} so'm`
+                main.innerHTML = `
+                    <h1>${title}</h1>
+                    <h3>${subtitle}</h3>
+                `
+            }, 2000)
+        }
+
+    </script>
+</body>
+<style>
+    section {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 50px;
+        background-color: #333;
+        color: snow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+</style>
+
+</html>
