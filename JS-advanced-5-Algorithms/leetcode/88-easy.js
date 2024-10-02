@@ -8,7 +8,7 @@
 var merge = function (nums1, m, nums2, n) {
     nums1.splice(m, n, ...nums2.slice(0, n))
     nums1.sort((a, b) => a - b)
-}
+}g
 let nums1 = [1]
 let nums2 = []
 let m = 1
