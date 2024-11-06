@@ -81,3 +81,90 @@ SHORTHAND:
 -->
 ```
 
+## Methods
+Vue.js allows you to define custom methods that can be called in response to DOM events. Here's how you can define methods in a Vue instance:
+- RU: Vue.js позволяет определять пользовательские методы, которые могут вызываться в ответ на события DOM. Вот как вы можете определить методы в экземпляре Vue:
+
+```html
+<div id="app">
+  <button v-on:click="handleClick">Click me</button>
+</div>
+
+<script>
+  const app = Vue.createApp({
+    methods: {
+      handleClick() {
+        alert('Button clicked!');
+      }
+    }
+  });
+
+  app.mount('#app');
+</script>
+```
+
+## Computed
+Computed properties are used to calculate a value based on other data properties. Computed properties are cached and only re-evaluated when their dependencies change. Here's how you can define computed properties in a Vue instance:
+
+- RU: Вычисляемые свойства используются для вычисления значения на основе других свойств данных. Вычисляемые свойства кэшируются и переоцениваются только тогда, когда изменяются их зависимости. Вот как вы можете определить вычисляемые свойства в экземпляре Vue:
+
+```html
+<div id="app">
+  <p>{{ fullName }}</p>
+</div>
+
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        firstName: 'John',
+        lastName: 'Doe'
+      };
+    },
+    computed: {
+      fullName() {
+        return `${this.firstName} ${this.lastName}`;
+      }
+    }
+  });
+
+  app.mount('#app');
+</script>
+```
+
+## Watchers
+Watchers are used to perform asynchronous operations in response to data changes. Watchers are defined as functions that receive the new and old values of the watched property. Here's how you can define watchers in a Vue instance:
+
+- RU: Наблюдатели используются для выполнения асинхронных операций в ответ на изменения данных. Наблюдатели определяются как функции, которые получают новые и старые значения отслеживаемого свойства. Вот как вы можете определить наблюдателей в экземпляре Vue:
+
+```html
+<div id="app">
+  <form>
+    <input v-model="num1" type="number">
+    <input v-model="num2" type="number">
+    <hr>
+    <p>Sum: {{ sum }}</p>
+  </form>
+</div>
+
+
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        num1: 0,
+        num2: 0,
+        sum: 0
+      };
+    },
+    watch: {
+      num1(newValue, oldValue) {
+        this.sum = newValue + this.num2;
+      },
+      num2(newValue, oldValue) {
+        this.sum = this.num1 + newValue;
+      }
+    }
+  });
+  app.mount('#app');
+</script>
