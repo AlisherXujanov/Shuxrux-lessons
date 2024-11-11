@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{ fullName }}</h2>
+
+        <input type="text" placeholder="First name" v-model="firstName">
+        <input type="text" placeholder="Last name" v-model="lastName">
+        <hr>
+
+        <h2>
+            <b>USD</b> <input type="number" placeholder="USD" v-model="USD"> - in <b>UZS</b>:
+            {{ uzbekSum }}
+        </h2>
+
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    firstName: "",
+                    lastName: "",
+                    USD: 0,
+                }
+            },
+            computed: {
+                fullName() {
+                    if (this.firstName !== "" && this.lastName !== "") {
+                        return this.firstName + " " + this.lastName;
+                    } else {
+                        return "";
+                    }
+                },
+                uzbekSum() {
+                    if (this.USD !== 0) {
+                        return this.USD * 12850;
+                    } else {
+                        return 0;
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+
+</html>
